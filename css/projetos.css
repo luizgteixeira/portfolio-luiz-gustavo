@@ -1,0 +1,377 @@
+/* =========================================================
+   PROJETOS.CSS — MAXIMUM PREMIUM
+   ========================================================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-med),
+    border-color var(--transition-med),
+    box-shadow var(--transition-med);
+}
+
+.project-card:hover {
+  transform: translateY(-9px) rotateX(1.5deg);
+  border-color: var(--border-hi);
+  box-shadow: var(--shadow-lg), var(--shadow-gold-strong);
+}
+
+/* ── Visual placeholder with animated grid pattern ─────── */
+.project-visual {
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--ink-mid);
+}
+
+/* Animated grid lines */
+.project-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(187, 221, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(187, 221, 242, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: grid-drift 12s linear infinite;
+}
+
+@keyframes grid-drift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 32px 32px, 32px 32px;
+  }
+}
+
+/* Hover reveal shimmer */
+.project-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+      transparent 25%,
+      rgba(114, 193, 242, 0.10) 50%,
+      transparent 75%);
+  background-size: 250% 100%;
+  background-position: 250% 0;
+  transition: background-position 0.8s var(--ease-out);
+}
+
+.project-card:hover .project-visual::after {
+  background-position: -250% 0;
+}
+
+.project-visual-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.60rem;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: rgba(187, 221, 242, 0.24);
+  white-space: nowrap;
+  z-index: 1;
+  transition:
+    color var(--transition-med),
+    letter-spacing var(--transition-med),
+    transform var(--transition-med);
+}
+
+.project-card:hover .project-visual-label {
+  color: rgba(114, 193, 242, 0.46);
+  letter-spacing: 0.38em;
+}
+
+/* ── Card body ──────────────────────────────────────────── */
+
+.project-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.project-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.30rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 9px;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+/* Underline sweep on hover */
+.project-body h3::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-top: 5px;
+  transition: width 0.38s var(--ease-out);
+}
+
+.project-card:hover .project-body h3 {
+  color: var(--gold-light);
+}
+
+.project-card:hover .project-body h3::after {
+  width: 70%;
+}
+
+.project-body p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.74;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.projects-cta {
+  text-align: center;
+  padding: 52px 0 0;
+}
+
+.projects-cta p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.projects-cta .conversion-actions {
+  justify-content: center;
+}
+
+@media (max-width: 980px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual--branded {
+    height: 180px;
+  }
+}
+
+/* ── Featured project card (Kasarão) ────────────────────── */
+
+.project-card--featured {
+  grid-row: span 1;
+  overflow: hidden;
+  /* já vem do .card, reforça */
+}
+
+/* Visual área — clicável, com logo real */
+.project-visual--branded {
+  display: block;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  background: #30401b;
+  cursor: pointer;
+}
+
+/* Fundo escuro com textura de gradiente quente — gastrobar vibes */
+.project-visual-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(171, 191, 126, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(114, 193, 242, 0.12) 0%, transparent 55%),
+    linear-gradient(160deg, #30401b 0%, #253314 60%, #1d280f 100%);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.project-visual--branded:hover .project-visual-bg {
+  transform: scale(1.06);
+}
+
+/* Logo centralizada */
+.project-visual-logo-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.7s var(--ease-out), filter 0.5s;
+}
+
+.project-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 8px 28px rgba(114, 193, 242, 0.24)) drop-shadow(0 0 60px rgba(88, 115, 47, 0.18));
+  transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
+}
+
+.project-visual--branded:hover .project-visual-logo-wrap {
+  transform: scale(1.08) translateY(-4px);
+}
+
+.project-visual--branded:hover .project-logo {
+  filter: drop-shadow(0 12px 36px rgba(114, 193, 242, 0.34)) drop-shadow(0 0 80px rgba(88, 115, 47, 0.28));
+}
+
+/* Overlay escuro que aparece no hover com CTA */
+.project-visual-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px;
+  background: linear-gradient(to top,
+      rgba(41, 57, 20, 0.58) 0%,
+      transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-med);
+}
+
+.project-visual--branded:hover .project-visual-overlay {
+  opacity: 1;
+}
+
+.project-visual-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(88, 115, 47, 0.34);
+  border: 1px solid var(--border-hi);
+  border-radius: 999px;
+  padding: 7px 14px;
+  backdrop-filter: blur(8px);
+  transform: translateY(6px);
+  transition: transform var(--transition-med), color var(--transition-fast);
+}
+
+.project-visual--branded:hover .project-visual-cta {
+  transform: translateY(0);
+}
+
+/* Meta row: tipo + páginas */
+.project-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.project-type {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.project-pages {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-pages::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border-hi);
+}
+
+/* ── De La Flor card ────────────────────────────────────── */
+
+.project-visual--delaflor .project-visual-bg {
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 110%, rgba(171, 191, 126, 0.26) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(114, 193, 242, 0.10) 0%, transparent 55%),
+    linear-gradient(150deg, #3e4e24 0%, #33411d 50%, #3e4e24 100%);
+}
+
+.project-logo--delaflor {
+  width: 138px;
+  height: 138px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter:
+    drop-shadow(0 6px 24px rgba(171, 191, 126, 0.40)) drop-shadow(0 0 55px rgba(114, 193, 242, 0.18));
+  transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
+}
+
+.project-visual--delaflor:hover .project-logo--delaflor {
+  filter:
+    drop-shadow(0 10px 36px rgba(171, 191, 126, 0.56)) drop-shadow(0 0 80px rgba(114, 193, 242, 0.24));
+}
+
+.project-visual--delaflor:hover .project-visual-bg {
+  transform: scale(1.06);
+}
+
+@media (max-width: 420px) {
+  .project-body {
+    padding: 20px;
+  }
+
+  .project-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .project-logo--delaflor {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .project-grid {
+    gap: 22px;
+  }
+
+  .project-card .project-body {
+    padding: 26px 24px 28px;
+  }
+}
