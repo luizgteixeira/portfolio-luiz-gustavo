@@ -20,7 +20,7 @@
   font-weight: 600;
   color: var(--cream);
   margin-bottom: 28px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .contact-actions {
@@ -73,7 +73,7 @@
 .field input,
 .field textarea {
   width: 100%;
-  background: rgba(88, 115, 47, 0.28);
+  background: rgba(13, 13, 13, 0.38);
   border: 1px solid var(--border);
   color: var(--cream);
   border-radius: var(--radius-md);
@@ -93,10 +93,10 @@
 
 .field input:focus,
 .field textarea:focus {
-  border-color: rgba(114, 193, 242, 0.42);
-  background: rgba(187, 221, 242, 0.06);
+  border-color: rgba(242, 178, 121, 0.42);
+  background: rgba(242, 221, 213, 0.06);
   box-shadow:
-    0 0 0 4px rgba(114, 193, 242, 0.10),
+    0 0 0 4px rgba(242, 178, 121, 0.10),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transform: translateY(-1px);
 }
@@ -127,7 +127,7 @@
 .contact-info-item {
   padding: 17px 18px;
   border-radius: var(--radius-md);
-  background: rgba(88, 115, 47, 0.24);
+  background: rgba(13, 13, 13, 0.34);
   border: 1px solid var(--border);
   border-left: 2px solid transparent;
   transition:
@@ -142,7 +142,7 @@
 .contact-info-item:hover {
   border-color: var(--border);
   border-left-color: var(--gold);
-  background: rgba(187, 221, 242, 0.07);
+  background: rgba(242, 221, 213, 0.07);
   transform: translateX(5px);
 }
 
@@ -176,9 +176,9 @@
   gap: 8px;
   height: 30px;
   padding: 0 13px;
-  border-radius: 999px;
-  background: rgba(171, 191, 126, 0.16);
-  border: 1px solid rgba(171, 191, 126, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(242, 185, 153, 0.14);
+  border: 1px solid rgba(242, 185, 153, 0.28);
   font-size: 0.70rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -192,8 +192,24 @@
   height: 6px;
   border-radius: 50%;
   background: var(--accent-secondary);
-  box-shadow: 0 0 8px rgba(134, 166, 65, 0.55);
+  box-shadow: 0 0 8px rgba(242, 178, 121, 0.55);
   animation: pulse-green 2.4s ease-in-out infinite;
+}
+
+/* Light readability pass */
+.contact-panel,
+.contact-side {
+  background: rgba(242, 221, 213, 0.72);
+}
+
+.field input,
+.field textarea,
+.contact-info-item {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.contact-info-item:hover {
+  background: rgba(242, 185, 153, 0.20);
 }
 
 @keyframes pulse-green {
@@ -202,13 +218,13 @@
   100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 8px rgba(134, 166, 65, 0.55);
+    box-shadow: 0 0 8px rgba(242, 178, 121, 0.55);
   }
 
   50% {
     opacity: 0.4;
     transform: scale(0.7);
-    box-shadow: 0 0 2px rgba(134, 166, 65, 0.24);
+    box-shadow: 0 0 2px rgba(242, 178, 121, 0.24);
   }
 }
 

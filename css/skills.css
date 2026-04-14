@@ -21,7 +21,7 @@
   font-weight: 600;
   color: var(--gold-light);
   margin-bottom: 4px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .skills-panel-sub {
@@ -40,7 +40,7 @@
 .skill-item {
   padding: 15px 17px;
   border-radius: var(--radius-md);
-  background: rgba(88, 115, 47, 0.28);
+  background: rgba(13, 13, 13, 0.28);
   border: 1px solid var(--border);
   transition:
     border-color 0.22s var(--ease-out),
@@ -58,7 +58,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg,
-      rgba(114, 193, 242, 0.06) 0%,
+      rgba(242, 178, 121, 0.06) 0%,
       transparent 60%);
   transform: translateX(-100%);
   transition: transform 0.40s var(--ease-out);
@@ -67,9 +67,9 @@
 
 .skill-item:hover {
   border-color: var(--border-hi);
-  background: rgba(187, 221, 242, 0.06);
+  background: rgba(242, 221, 213, 0.06);
   transform: translateX(6px);
-  box-shadow: var(--shadow-sm), 0 0 20px rgba(114, 193, 242, 0.08);
+  box-shadow: var(--shadow-sm), 0 0 20px rgba(242, 178, 121, 0.08);
 }
 
 .skill-item:hover::before {
@@ -178,9 +178,9 @@
   border-radius: var(--radius-xl);
   padding: 54px 58px;
   background: linear-gradient(135deg,
-      rgba(114, 193, 242, 0.08) 0%,
-      rgba(88, 115, 47, 0.32) 45%,
-      rgba(187, 221, 242, 0.05) 100%);
+      rgba(242, 178, 121, 0.08) 0%,
+      rgba(13, 13, 13, 0.32) 45%,
+      rgba(242, 221, 213, 0.05) 100%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
@@ -198,7 +198,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(114, 193, 242, 0.08), transparent 68%);
+  background: radial-gradient(circle, rgba(242, 178, 121, 0.08), transparent 68%);
   pointer-events: none;
   animation: orb-pulse 7s ease-in-out infinite;
 }
@@ -219,7 +219,7 @@
 
 .philosophy-quote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  font-size: 1.9rem;
   font-style: italic;
   font-weight: 400;
   color: var(--cream);
@@ -258,7 +258,7 @@
 
 .philosophy-item:hover {
   border-color: var(--border);
-  background: rgba(187, 221, 242, 0.06);
+  background: rgba(242, 221, 213, 0.06);
 }
 
 .philosophy-dot {
@@ -268,7 +268,7 @@
   background: var(--gold);
   flex-shrink: 0;
   margin-top: 9px;
-  box-shadow: 0 0 7px rgba(114, 193, 242, 0.45);
+  box-shadow: 0 0 7px rgba(242, 178, 121, 0.45);
   animation: dot-beat 2.8s ease-in-out infinite;
 }
 
@@ -284,12 +284,12 @@
 
   0%,
   100% {
-    box-shadow: 0 0 7px rgba(114, 193, 242, 0.45);
+    box-shadow: 0 0 7px rgba(242, 178, 121, 0.45);
     transform: scale(1);
   }
 
   50% {
-    box-shadow: 0 0 14px rgba(171, 191, 126, 0.72);
+    box-shadow: 0 0 14px rgba(242, 185, 153, 0.72);
     transform: scale(1.4);
   }
 }
@@ -321,6 +321,10 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .philosophy-quote {
+    font-size: 1.55rem;
+  }
 }
 
 @media (min-width: 1600px) {
@@ -335,4 +339,57 @@
   .philosophy-strip {
     gap: 68px;
   }
+}
+
+/* Palette refinement */
+.skill-item {
+  background: rgba(13, 13, 13, 0.38);
+}
+
+.skill-item::before {
+  background: linear-gradient(90deg,
+      rgba(242, 178, 121, 0.08) 0%,
+      transparent 60%);
+}
+
+.skill-item:hover {
+  background: rgba(242, 221, 213, 0.06);
+  box-shadow: var(--shadow-sm), 0 0 20px rgba(242, 178, 121, 0.08);
+}
+
+.skill-bar {
+  background: rgba(242, 221, 213, 0.08);
+}
+
+.philosophy-strip {
+  background: linear-gradient(135deg,
+      rgba(242, 178, 121, 0.10) 0%,
+      rgba(13, 13, 13, 0.42) 45%,
+      rgba(242, 221, 213, 0.05) 100%);
+}
+
+.philosophy-strip::before {
+  background: radial-gradient(circle, rgba(242, 178, 121, 0.10), transparent 68%);
+}
+
+.philosophy-dot {
+  box-shadow: 0 0 7px rgba(242, 178, 121, 0.45);
+}
+
+/* Light readability pass */
+.skills-panel,
+.skill-item {
+  background: rgba(242, 221, 213, 0.70);
+}
+
+.skill-item:hover,
+.philosophy-item:hover {
+  background: rgba(242, 185, 153, 0.22);
+}
+
+.philosophy-strip {
+  background: linear-gradient(135deg,
+      rgba(242, 178, 121, 0.22) 0%,
+      rgba(242, 221, 213, 0.78) 46%,
+      rgba(255, 255, 255, 0.22) 100%);
 }

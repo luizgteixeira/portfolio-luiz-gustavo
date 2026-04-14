@@ -4,7 +4,7 @@
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -39,8 +39,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(187, 221, 242, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(187, 221, 242, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(242, 221, 213, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 221, 213, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
   animation: grid-drift 12s linear infinite;
 }
@@ -62,7 +62,7 @@
   inset: 0;
   background: linear-gradient(120deg,
       transparent 25%,
-      rgba(114, 193, 242, 0.10) 50%,
+      rgba(242, 178, 121, 0.10) 50%,
       transparent 75%);
   background-size: 250% 100%;
   background-position: 250% 0;
@@ -81,7 +81,7 @@
   font-size: 0.60rem;
   letter-spacing: 0.30em;
   text-transform: uppercase;
-  color: rgba(187, 221, 242, 0.24);
+  color: rgba(242, 221, 213, 0.24);
   white-space: nowrap;
   z-index: 1;
   transition:
@@ -91,7 +91,7 @@
 }
 
 .project-card:hover .project-visual-label {
-  color: rgba(114, 193, 242, 0.46);
+  color: rgba(242, 178, 121, 0.46);
   letter-spacing: 0.38em;
 }
 
@@ -142,6 +142,33 @@
   flex: 1;
 }
 
+.project-status {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 7px 11px;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 13, 13, 0.06);
+  color: rgba(13, 13, 13, 0.72);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(242, 178, 121, 0.18);
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -175,7 +202,7 @@
   }
 
   .project-visual--branded {
-    height: 180px;
+    height: clamp(220px, 58vw, 320px);
   }
 }
 
@@ -191,7 +218,7 @@
 .project-visual--branded {
   display: block;
   width: 100%;
-  height: 200px;
+  height: clamp(250px, 24vw, 330px);
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -205,14 +232,57 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(171, 191, 126, 0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(114, 193, 242, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.12) 0%, transparent 55%),
     linear-gradient(160deg, #30401b 0%, #253314 60%, #1d280f 100%);
   transition: transform 0.8s var(--ease-out);
 }
 
 .project-visual--branded:hover .project-visual-bg {
   transform: scale(1.06);
+}
+
+.project-visual--video .project-visual-bg {
+  z-index: 0;
+}
+
+.project-visual--video::before {
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(13, 13, 13, 0.02) 0%, rgba(13, 13, 13, 0.08) 100%),
+    linear-gradient(90deg, rgba(242, 221, 213, 0.04) 0%, transparent 30%, transparent 70%, rgba(13, 13, 13, 0.06) 100%);
+  animation: none;
+  pointer-events: none;
+}
+
+.project-visual--video::after {
+  z-index: 4;
+  background: none;
+  pointer-events: none;
+}
+
+.project-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0D0D0D;
+  filter: saturate(1.04) contrast(1.08) brightness(1.02);
+  transform: none;
+  transition:
+    filter var(--transition-med);
+}
+
+.project-visual--video:hover .project-video,
+.project-visual--video:focus-visible .project-video {
+  filter: saturate(1.08) contrast(1.1) brightness(1.04);
+}
+
+.project-visual--video:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 /* Logo centralizada */
@@ -231,7 +301,7 @@
   height: 130px;
   object-fit: contain;
   border-radius: 50%;
-  filter: drop-shadow(0 8px 28px rgba(114, 193, 242, 0.24)) drop-shadow(0 0 60px rgba(88, 115, 47, 0.18));
+  filter: drop-shadow(0 8px 28px rgba(242, 178, 121, 0.24)) drop-shadow(0 0 60px rgba(13, 13, 13, 0.18));
   transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
 }
 
@@ -240,7 +310,7 @@
 }
 
 .project-visual--branded:hover .project-logo {
-  filter: drop-shadow(0 12px 36px rgba(114, 193, 242, 0.34)) drop-shadow(0 0 80px rgba(88, 115, 47, 0.28));
+  filter: drop-shadow(0 12px 36px rgba(242, 178, 121, 0.34)) drop-shadow(0 0 80px rgba(13, 13, 13, 0.28));
 }
 
 /* Overlay escuro que aparece no hover com CTA */
@@ -253,7 +323,7 @@
   justify-content: flex-end;
   padding: 16px;
   background: linear-gradient(to top,
-      rgba(41, 57, 20, 0.58) 0%,
+      rgba(0, 0, 0, 0.58) 0%,
       transparent 50%);
   opacity: 0;
   transition: opacity var(--transition-med);
@@ -261,6 +331,14 @@
 
 .project-visual--branded:hover .project-visual-overlay {
   opacity: 1;
+}
+
+.project-visual--branded:focus-visible .project-visual-overlay {
+  opacity: 1;
+}
+
+.project-visual--video .project-visual-overlay {
+  z-index: 5;
 }
 
 .project-visual-cta {
@@ -272,7 +350,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-light);
-  background: rgba(88, 115, 47, 0.34);
+  background: rgba(13, 13, 13, 0.34);
   border: 1px solid var(--border-hi);
   border-radius: 999px;
   padding: 7px 14px;
@@ -326,8 +404,8 @@
 
 .project-visual--delaflor .project-visual-bg {
   background:
-    radial-gradient(ellipse 75% 65% at 50% 110%, rgba(171, 191, 126, 0.26) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(114, 193, 242, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 65% at 50% 110%, rgba(242, 185, 153, 0.26) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(242, 178, 121, 0.10) 0%, transparent 55%),
     linear-gradient(150deg, #3e4e24 0%, #33411d 50%, #3e4e24 100%);
 }
 
@@ -337,13 +415,13 @@
   object-fit: contain;
   border-radius: 50%;
   filter:
-    drop-shadow(0 6px 24px rgba(171, 191, 126, 0.40)) drop-shadow(0 0 55px rgba(114, 193, 242, 0.18));
+    drop-shadow(0 6px 24px rgba(242, 185, 153, 0.40)) drop-shadow(0 0 55px rgba(242, 178, 121, 0.18));
   transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
 }
 
 .project-visual--delaflor:hover .project-logo--delaflor {
   filter:
-    drop-shadow(0 10px 36px rgba(171, 191, 126, 0.56)) drop-shadow(0 0 80px rgba(114, 193, 242, 0.24));
+    drop-shadow(0 10px 36px rgba(242, 185, 153, 0.56)) drop-shadow(0 0 80px rgba(242, 178, 121, 0.24));
 }
 
 .project-visual--delaflor:hover .project-visual-bg {
@@ -374,4 +452,67 @@
   .project-card .project-body {
     padding: 26px 24px 28px;
   }
+}
+
+/* Palette refinement */
+.project-visual {
+  background: var(--ink);
+}
+
+.project-visual::before {
+  background-image:
+    linear-gradient(rgba(242, 221, 213, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 221, 213, 0.05) 1px, transparent 1px);
+}
+
+.project-visual::after {
+  background: linear-gradient(120deg,
+      transparent 25%,
+      rgba(242, 178, 121, 0.12) 50%,
+      transparent 75%);
+}
+
+.project-visual--branded {
+  background: #0D0D0D;
+}
+
+.project-visual-bg,
+.project-visual--delaflor .project-visual-bg {
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.12) 0%, transparent 55%),
+    linear-gradient(160deg, #181614 0%, #0D0D0D 100%);
+}
+
+.project-logo,
+.project-logo--delaflor {
+  filter: drop-shadow(0 8px 28px rgba(242, 178, 121, 0.22)) drop-shadow(0 0 60px rgba(242, 185, 153, 0.16));
+}
+
+.project-visual-overlay {
+  background: linear-gradient(to top,
+      rgba(13, 13, 13, 0.72) 0%,
+      transparent 52%);
+}
+
+.project-visual-cta {
+  border-radius: var(--radius-sm);
+  background: rgba(13, 13, 13, 0.62);
+}
+
+/* Light readability pass */
+.project-card {
+  background: rgba(242, 221, 213, 0.72);
+}
+
+.project-visual-bg,
+.project-visual--delaflor .project-visual-bg {
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.20) 0%, transparent 55%),
+    linear-gradient(160deg, #F2DDD5 0%, #F2B999 100%);
+}
+
+.project-visual-cta {
+  color: #F2DDD5;
 }

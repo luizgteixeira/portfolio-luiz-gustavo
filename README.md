@@ -26,6 +26,7 @@ O visual do site prioriza:
 - `skills.html` — diferenciais
 - `projetos.html` — portfólio de projetos
 - `contato.html` — formulário e canais de contato
+- `produtos.html` — página de produto com galeria, preço, avaliações e busca
 
 ## Estrutura do projeto
 
@@ -44,6 +45,7 @@ O visual do site prioriza:
 |-- skills.html
 |-- projetos.html
 |-- contato.html
+|-- produtos.html
 |-- robots.txt
 `-- sitemap.xml
 ```
@@ -107,4 +109,3 @@ O projeto já inclui:
 ## Objetivo do projeto
 
 Este repositório serve como base do site oficial/portfólio de apresentação profissional de Luiz Gustavo, com foco em autoridade visual, clareza de oferta e geração de novos contatos comerciais.
-

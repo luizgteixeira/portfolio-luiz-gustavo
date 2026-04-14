@@ -1,0 +1,665 @@
+.product-page {
+  overflow: clip;
+}
+
+.product-hero {
+  padding-top: 48px;
+}
+
+.product-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 28px;
+  align-items: end;
+  padding: 34px;
+  margin-bottom: 34px;
+}
+
+.product-search-title {
+  font-size: 3.6rem;
+  margin-bottom: 14px;
+  color: var(--cream);
+}
+
+.product-search-text {
+  max-width: 62ch;
+  color: var(--text-secondary);
+}
+
+.product-search-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.product-search-input {
+  min-height: 56px;
+  padding: 0 18px;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.product-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.product-layout,
+.product-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.product-gallery,
+.product-summary {
+  min-width: 0;
+}
+
+.gallery-stage {
+  position: relative;
+  padding: 26px;
+  min-height: 620px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(242, 221, 213, 0.12), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(13, 13, 13, 0.14));
+}
+
+.gallery-figure {
+  width: 100%;
+  min-height: 560px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(242, 178, 121, 0.18), transparent 36%),
+    linear-gradient(180deg, rgba(242, 221, 213, 0.08), rgba(13, 13, 13, 0.22));
+  border: 1px solid rgba(242, 221, 213, 0.18);
+}
+
+.gallery-main-image {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  transition: transform var(--transition-slow), filter var(--transition-med);
+}
+
+.gallery-figure:hover .gallery-main-image {
+  transform: scale(1.08);
+  filter: saturate(1.05);
+}
+
+.gallery-nav,
+.gallery-zoom,
+.product-lightbox-close {
+  border: 0;
+  cursor: pointer;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  transform: translateY(-50%);
+  background: rgba(13, 13, 13, 0.82);
+  color: var(--cream);
+  border: 1px solid var(--border-hi);
+  z-index: 2;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.gallery-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: rgba(242, 178, 121, 0.18);
+}
+
+.gallery-nav-prev {
+  left: 16px;
+}
+
+.gallery-nav-next {
+  right: 16px;
+}
+
+.gallery-zoom {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 13, 13, 0.82);
+  color: var(--cream);
+  border: 1px solid var(--border-hi);
+}
+
+.gallery-thumbs {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-thumb {
+  border: 1px solid rgba(242, 221, 213, 0.16);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.gallery-thumb:hover,
+.gallery-thumb.is-active {
+  transform: translateY(-3px);
+  border-color: var(--border-hi);
+  box-shadow: var(--shadow-md);
+}
+
+.product-summary {
+  display: grid;
+  gap: 22px;
+}
+
+.product-summary-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.product-rating-inline {
+  color: var(--gold-light);
+  font-size: 0.94rem;
+}
+
+.product-rating-inline small {
+  color: var(--text-muted);
+}
+
+.product-title {
+  font-size: 3.7rem;
+  color: var(--cream);
+}
+
+.product-description {
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.product-price-box,
+.meta-card,
+.review-card,
+.related-card,
+.search-empty {
+  padding: 24px;
+}
+
+.product-price-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.product-price-label {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-price-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.product-price-current {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.product-price-old {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.product-discount {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(242, 178, 121, 0.2), rgba(242, 185, 153, 0.2));
+  border: 1px solid var(--border-hi);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.product-purchase {
+  display: grid;
+  grid-template-columns: auto minmax(220px, 1fr);
+  gap: 18px;
+  align-items: end;
+  padding: 24px;
+}
+
+.product-field-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+}
+
+.quantity-control {
+  display: inline-grid;
+  grid-template-columns: 48px 90px 48px;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quantity-control button,
+.quantity-control input {
+  min-height: 50px;
+  border: 0;
+  background: transparent;
+  color: var(--cream);
+  text-align: center;
+}
+
+.quantity-control button {
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.quantity-control button:hover {
+  background: rgba(242, 221, 213, 0.08);
+}
+
+.quantity-control input::-webkit-outer-spin-button,
+.quantity-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-add-to-cart {
+  min-width: 100%;
+}
+
+.product-cart-feedback {
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.product-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.meta-card h3,
+.related-body h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--cream);
+}
+
+.meta-card p,
+.review-card p,
+.related-body p {
+  color: var(--text-secondary);
+}
+
+.product-story,
+.product-specs {
+  padding: 34px;
+}
+
+.product-highlights {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.product-highlights li {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(242, 221, 213, 0.1);
+}
+
+.spec-list {
+  display: grid;
+  gap: 20px;
+}
+
+.spec-list dt {
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.spec-list dd {
+  color: var(--text-secondary);
+}
+
+.reviews-grid,
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.review-card strong {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--cream);
+}
+
+.review-stars {
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.related-card {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+}
+
+.related-visual {
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(242, 221, 213, 0.12);
+}
+
+.related-visual-a {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(242, 221, 213, 0.4), transparent 24%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.34), rgba(242, 178, 121, 0.26)),
+    url("../img/de-la-flor.png") center/cover;
+}
+
+.related-visual-b {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(242, 178, 121, 0.28), transparent 24%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.34), rgba(242, 185, 153, 0.26)),
+    url("../img/de-la-flor2.png") center/cover;
+}
+
+.related-visual-c {
+  background:
+    radial-gradient(circle at 40% 25%, rgba(242, 221, 213, 0.24), transparent 26%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.48), rgba(13, 13, 13, 0.24));
+}
+
+.related-visual-d {
+  background:
+    radial-gradient(circle at 70% 35%, rgba(242, 185, 153, 0.32), transparent 25%),
+    linear-gradient(135deg, rgba(242, 178, 121, 0.18), rgba(13, 13, 13, 0.42));
+}
+
+.related-body {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+}
+
+.search-empty {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.product-lightbox {
+  width: min(92vw, 960px);
+  padding: 0;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 13, 13, 0.92);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-lightbox::backdrop {
+  background: rgba(13, 13, 13, 0.74);
+  backdrop-filter: blur(6px);
+}
+
+.product-lightbox-inner {
+  position: relative;
+  padding: 18px;
+}
+
+.product-lightbox-inner img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.product-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 13, 13, 0.8);
+  color: var(--cream);
+  border: 1px solid var(--border-hi);
+  font-size: 1.5rem;
+}
+
+/* Palette refinement */
+.gallery-stage {
+  background:
+    radial-gradient(circle at top, rgba(242, 221, 213, 0.12), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(13, 13, 13, 0.28));
+}
+
+.gallery-figure {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(242, 178, 121, 0.18), transparent 36%),
+    linear-gradient(180deg, rgba(242, 221, 213, 0.08), rgba(13, 13, 13, 0.32));
+  border-color: rgba(242, 221, 213, 0.18);
+}
+
+.gallery-nav,
+.gallery-zoom,
+.product-lightbox-close {
+  background: rgba(13, 13, 13, 0.82);
+}
+
+.gallery-nav:hover {
+  background: rgba(242, 178, 121, 0.18);
+}
+
+.gallery-thumb {
+  border-color: rgba(242, 221, 213, 0.16);
+  background: rgba(242, 221, 213, 0.06);
+}
+
+.product-discount {
+  background: linear-gradient(135deg, rgba(242, 178, 121, 0.20), rgba(242, 185, 153, 0.20));
+}
+
+.product-highlights li,
+.quantity-control {
+  background: rgba(242, 221, 213, 0.06);
+}
+
+.related-visual-a,
+.related-visual-b,
+.related-visual-c,
+.related-visual-d {
+  background:
+    radial-gradient(circle at 35% 28%, rgba(242, 221, 213, 0.30), transparent 26%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.44), rgba(242, 178, 121, 0.22));
+}
+
+.related-visual-a {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(242, 221, 213, 0.36), transparent 24%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.34), rgba(242, 178, 121, 0.24)),
+    url("../img/de-la-flor.png") center/cover;
+}
+
+.related-visual-b {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(242, 178, 121, 0.28), transparent 24%),
+    linear-gradient(135deg, rgba(13, 13, 13, 0.34), rgba(242, 185, 153, 0.24)),
+    url("../img/de-la-flor2.png") center/cover;
+}
+
+.product-lightbox {
+  background: rgba(13, 13, 13, 0.94);
+}
+
+.product-lightbox::backdrop {
+  background: rgba(13, 13, 13, 0.76);
+}
+
+/* Light readability pass */
+.product-search,
+.product-purchase,
+.product-story,
+.product-specs,
+.meta-card,
+.review-card,
+.related-card,
+.search-empty {
+  background: rgba(242, 221, 213, 0.72);
+}
+
+.gallery-stage,
+.gallery-figure,
+.product-search-input,
+.quantity-control {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(242, 185, 153, 0.18)),
+    rgba(242, 221, 213, 0.72);
+}
+
+.gallery-nav,
+.gallery-zoom,
+.product-lightbox-close {
+  background: rgba(242, 221, 213, 0.90);
+  color: var(--ink);
+}
+
+.product-lightbox {
+  background: rgba(242, 221, 213, 0.96);
+}
+
+[data-product-card][hidden] {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .product-layout,
+  .product-info-grid,
+  .product-search {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid,
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .gallery-stage {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .gallery-figure,
+  .gallery-main-image {
+    min-height: 420px;
+  }
+
+  .product-purchase,
+  .product-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-search-title,
+  .product-title {
+    font-size: 2.65rem;
+  }
+
+  .product-price-current {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-hero {
+    padding-top: 20px;
+  }
+
+  .product-search,
+  .product-story,
+  .product-specs,
+  .product-price-box,
+  .product-purchase,
+  .meta-card,
+  .review-card,
+  .related-body {
+    padding: 22px;
+  }
+
+  .gallery-nav {
+    width: 42px;
+    height: 42px;
+  }
+
+  .gallery-figure,
+  .gallery-main-image {
+    min-height: 320px;
+  }
+
+  .gallery-thumbs,
+  .reviews-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .product-price-box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-search-title,
+  .product-title {
+    font-size: 2.2rem;
+  }
+}

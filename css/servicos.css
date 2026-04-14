@@ -22,7 +22,7 @@
   inset: 0;
   border-radius: var(--radius-lg);
   background: linear-gradient(130deg,
-      rgba(114, 193, 242, 0.09) 0%,
+      rgba(242, 178, 121, 0.09) 0%,
       transparent 50%);
   opacity: 0;
   transition: opacity var(--transition-med);
@@ -152,7 +152,7 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(114, 193, 242, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(242, 178, 121, 0.08), transparent 70%);
   opacity: 0;
   transition: opacity var(--transition-med);
   pointer-events: none;
@@ -174,15 +174,15 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.9rem;
   font-weight: 300;
-  color: rgba(187, 221, 242, 0.16);
+  color: rgba(242, 221, 213, 0.16);
   line-height: 1;
   margin-bottom: 10px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   transition: color var(--transition-med);
 }
 
 .process-card:hover .process-step {
-  color: rgba(114, 193, 242, 0.26);
+  color: rgba(242, 178, 121, 0.26);
 }
 
 .process-card strong {
@@ -242,7 +242,7 @@
   height: 44px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background: rgba(187,221,242,.08);
+  background: rgba(242,221,213,.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,9 +251,51 @@
   transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .service-card:hover .service-icon {
-  background: rgba(114,193,242,.14);
+  background: rgba(242,178,121,.14);
   border-color: var(--border-hi);
   transform: scale(1.08) rotate(-3deg);
-  box-shadow: 0 4px 16px rgba(114,193,242,.18);
+  box-shadow: 0 4px 16px rgba(242,178,121,.18);
   color: var(--gold-bright);
+}
+
+/* Palette refinement */
+.service-card::after {
+  background: linear-gradient(130deg,
+      rgba(242, 178, 121, 0.10) 0%,
+      transparent 50%);
+}
+
+.process-card {
+  background: var(--surface);
+}
+
+.process-card::after {
+  background: radial-gradient(circle, rgba(242, 178, 121, 0.08), transparent 70%);
+}
+
+.process-step {
+  color: rgba(242, 221, 213, 0.16);
+}
+
+.process-card:hover .process-step {
+  color: rgba(242, 178, 121, 0.30);
+}
+
+.service-icon {
+  background: rgba(242, 221, 213, 0.08);
+}
+
+/* Light readability pass */
+.service-card,
+.process-card {
+  background: rgba(242, 221, 213, 0.70);
+}
+
+.process-grid {
+  background: rgba(13, 13, 13, 0.12);
+  border-color: rgba(13, 13, 13, 0.12);
+}
+
+.service-icon {
+  background: rgba(255, 255, 255, 0.28);
 }
