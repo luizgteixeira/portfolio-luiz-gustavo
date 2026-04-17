@@ -1,51 +1,78 @@
 # Luiz Gustavo Dev
 
-Site institucional e portfólio de `Luiz Gustavo Dev`, com foco em apresentar serviços, diferenciais, projetos e canais de contato de forma premium, responsiva e orientada à conversão.
+Portfólio profissional e site institucional de **Luiz Gustavo Dev**, desenvolvido com `HTML5`, `CSS3` e `JavaScript` puro.
 
-## Visão geral
+O projeto está em produção como vitrine comercial para apresentação de serviços, diferenciais, projetos entregues e canais de contato. A proposta é unir uma interface visualmente premium com navegação objetiva, boa responsividade e interações leves, sem depender de frameworks ou etapa de build.
 
-Este projeto é um site estático em `HTML`, `CSS` e `JavaScript`, pensado para divulgar:
+## Visão Geral
 
-- criação de sites profissionais
-- landing pages
-- sistemas web sob demanda
-- projetos já entregues
-- formas rápidas de contato
+Este repositório reúne as páginas principais do portfólio:
 
-O visual do site prioriza:
+- `index.html` — apresentação inicial, proposta de valor, chamadas para contato e vídeo demonstrativo
+- `servicos.html` — serviços oferecidos e estrutura de entrega
+- `skills.html` — diferenciais técnicos e estratégicos
+- `projetos.html` — projetos, cases e demonstrações visuais
+- `contato.html` — formulário de contato e canais diretos
 
-- aparência premium
-- boa leitura em desktop e mobile
-- navegação simples
-- CTA forte para geração de contato
+O site foi pensado para:
 
-## Páginas
+- apresentar serviços de desenvolvimento web com clareza
+- transmitir confiança para visitantes e possíveis clientes
+- funcionar bem em desktop, tablet e celular
+- manter boa leitura, hierarquia visual e chamadas de ação
+- usar interações em JavaScript apenas onde elas melhoram a experiência
 
-- `index.html` — home
-- `servicos.html` — página de serviços
-- `skills.html` — diferenciais
-- `projetos.html` — portfólio de projetos
-- `contato.html` — formulário e canais de contato
-- `produtos.html` — página de produto com galeria, preço, avaliações e busca
+## Destaques Técnicos
 
-## Estrutura do projeto
+- Layout responsivo com CSS modular por página
+- Menu mobile acessível com controle de `aria-expanded`
+- Animações progressivas com `IntersectionObserver`
+- Respeito à preferência de movimento reduzido com `prefers-reduced-motion`
+- Barra de progresso de rolagem criada via JavaScript
+- Estado visual do cabeçalho conforme a rolagem da página
+- Efeito de partículas em `canvas` no hero, ativado apenas em telas maiores
+- Cursor animado no destaque inicial
+- Formulário de contato com validação nativa e geração de `mailto`
+- Módulos JavaScript reutilizáveis para galeria, preço, quantidade e busca em páginas de produto
+- Estrutura básica de SEO com metatags, favicon, `robots.txt` e `sitemap.xml`
+
+## JavaScript
+
+Embora o projeto seja estático, o arquivo [`js/script.js`](js/script.js) concentra várias interações de interface usando **Vanilla JavaScript**:
+
+- `initRevealObserver()` controla as animações de entrada dos elementos
+- `initScrollProgress()` cria a barra superior de progresso da página
+- `initHeaderState()` altera o cabeçalho após o início da rolagem
+- `initMobileMenu()` gerencia abertura, fechamento, links, clique externo e tecla `Escape`
+- `initContactForm()` monta a mensagem de e-mail a partir do formulário
+- `initHeroParticles()` desenha e anima partículas no `canvas`
+- `initKickerBlink()` adiciona o cursor visual no texto inicial
+- `initProductGallery()`, `initProductPricing()`, `initProductQuantity()` e `initProductSearch()` deixam prontos módulos de produto reutilizáveis
+
+A escolha por JavaScript puro foi intencional: manter o site leve, fácil de auditar no GitHub e sem dependências desnecessárias para uma landing page/portfólio institucional.
+
+## Estrutura do Projeto
 
 ```text
 .
 |-- css/
+|   |-- contato.css
 |   |-- global.css
+|   |-- index.css
 |   |-- menu.css
-|   `-- index.css
+|   |-- produtos.css
+|   |-- projetos.css
+|   |-- servicos.css
+|   `-- skills.css
 |-- img/
 |-- js/
 |   `-- script.js
 |-- video/
+|-- contato.html
 |-- index.html
+|-- projetos.html
 |-- servicos.html
 |-- skills.html
-|-- projetos.html
-|-- contato.html
-|-- produtos.html
 |-- robots.txt
 `-- sitemap.xml
 ```
@@ -56,12 +83,13 @@ O visual do site prioriza:
 - `CSS3`
 - `JavaScript` puro
 - Google Fonts
+- Imagens e vídeos locais
 
-## Como executar localmente
+## Como Executar Localmente
 
 Como o projeto é estático, basta abrir o arquivo `index.html` no navegador.
 
-Se preferir rodar com servidor local, você pode usar uma extensão como Live Server no VS Code ou qualquer servidor estático simples.
+Se preferir rodar com servidor local, use uma extensão como Live Server no VS Code ou qualquer servidor estático simples.
 
 Exemplo com Python:
 
@@ -75,37 +103,30 @@ Depois, acesse:
 http://localhost:5500
 ```
 
-## Publicação no GitHub
+## SEO e Publicação
 
-Você pode subir este projeto normalmente para um repositório no GitHub.
+O projeto já inclui arquivos e configurações úteis para publicação:
 
-Passo a passo básico:
+- metatags de título e descrição por página
+- favicon
+- `robots.txt`
+- `sitemap.xml`
+- assets locais para imagens e vídeos
+- estrutura compatível com hospedagem estática
 
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <URL_DO_REPOSITORIO>
-git push -u origin main
-```
-
-Se quiser publicar como site estático, uma opção simples é usar:
+Pode ser publicado em serviços como:
 
 - GitHub Pages
 - Vercel
 - Netlify
+- Cloudflare Pages
 
-## SEO e ativos
+## Observação Sobre as Linguagens no GitHub
 
-O projeto já inclui:
+O GitHub calcula a porcentagem de linguagens principalmente pelo tamanho dos arquivos do repositório. Como este projeto tem uma camada visual forte, é natural que `CSS` apareça com participação maior que `JavaScript`.
 
-- `meta tags` para compartilhamento
-- `robots.txt`
-- `sitemap.xml`
-- favicon
-- imagens locais para a identidade visual do site
+Isso não significa ausência de lógica: as interações principais estão centralizadas em `js/script.js`, usando JavaScript puro e com foco em experiência, acessibilidade e manutenção simples.
 
-## Objetivo do projeto
+## Objetivo
 
-Este repositório serve como base do site oficial/portfólio de apresentação profissional de Luiz Gustavo, com foco em autoridade visual, clareza de oferta e geração de novos contatos comerciais.
+Este repositório funciona como base pública do portfólio de Luiz Gustavo, reforçando presença profissional, clareza de oferta e geração de contatos comerciais por meio de um site rápido, responsivo e direto ao ponto.
