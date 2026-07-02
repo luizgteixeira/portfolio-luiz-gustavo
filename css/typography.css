@@ -1,12 +1,13 @@
 /* =========================================================
-   TYPOGRAPHY.CSS - Luiz Gustavo Dev
-   Fontes locais escolhidas:
-   - Geist: textos, navegacao, botoes e UI
-   - Plus Jakarta Sans: titulos, chamadas e destaques
-
-   Importante: este arquivo NAO inclui os arquivos .TTF.
-   Copie manualmente as fontes para /fonts conforme instrucoes.
+   TYPOGRAPHY.CSS — Luiz Gustavo Dev
+   Fontes locais: Geist + Plus Jakarta Sans
    ========================================================= */
+
+/* ─────────────────────────────────────────────────────────
+   FONT-FACE
+   Use apenas os pesos necessários para manter o site leve.
+   Caminhos considerando este arquivo dentro da pasta css/.
+   ───────────────────────────────────────────────────────── */
 
 @font-face {
   font-family: 'Geist';
@@ -56,19 +57,41 @@
   font-display: swap;
 }
 
+/* ─────────────────────────────────────────────────────────
+   TOKENS TIPOGRÁFICOS
+   ───────────────────────────────────────────────────────── */
+
 :root {
-  --font-body: 'Geist', 'DM Sans', 'Segoe UI', Arial, sans-serif;
-  --font-ui: 'Geist', 'DM Sans', 'Segoe UI', Arial, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'Geist', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Geist', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-ui: 'Geist', 'Segoe UI', system-ui, sans-serif;
 }
 
-body,
+/* ─────────────────────────────────────────────────────────
+   BASE
+   ───────────────────────────────────────────────────────── */
+
+html,
+body {
+  font-family: var(--font-body);
+}
+
+body {
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  font-synthesis-weight: none;
+}
+
 button,
 input,
 textarea,
 select {
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
 }
+
+/* ─────────────────────────────────────────────────────────
+   TÍTULOS GERAIS
+   ───────────────────────────────────────────────────────── */
 
 h1,
 h2,
@@ -76,100 +99,476 @@ h3,
 h4,
 .hero-title,
 .section-title,
-.stat-num,
-.highlight-band blockquote,
-.footer-brand-title {
+.conversion-copy h2,
+.highlight-band blockquote {
   font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+  font-synthesis-weight: none;
+  overflow: visible;
 }
 
-.hero-title {
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.94;
+/* H3 e títulos menores ficam mais elegantes com Geist */
+h3,
+h4,
+.card h3,
+.feature-card h3,
+.preview-card h3,
+.project-card h3,
+.service-card h3,
+.skill-card h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CORREÇÃO DO CORTE À DIREITA NAS SECTION HEADS
+   ───────────────────────────────────────────────────────── */
+
+.section-head,
+.section-head.reveal {
+  width: 100%;
+  max-width: min(940px, 100%);
+  margin-bottom: 60px;
+  padding-right: clamp(24px, 4vw, 56px);
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.section-head .section-kicker,
+.section-head .section-title,
+.section-head .section-subtitle {
+  max-width: 100%;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 .section-title {
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  font-size: clamp(2.35rem, 4.7vw, 3.05rem);
+  line-height: 1.1;
+  letter-spacing: -0.052em;
+  padding-right: 0.22em;
+  margin-right: -0.02em;
+  overflow: visible;
 }
 
-h3,
-.card h3,
-.preview-card h3,
-.service-card h3,
-.project-card h3 {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.hero-text,
-.section-subtitle,
-.card p,
-.preview-card p,
-.project-body p,
-.contact-info-item span,
-.footer-atendimento,
-p,
-li {
+/* Subtítulo um pouco mais largo para acompanhar a nova fonte */
+.section-subtitle {
+  max-width: 64ch;
+  padding-right: 1rem;
   font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.2vw, 1.06rem);
+  font-weight: 400;
+  letter-spacing: -0.014em;
+  line-height: 1.78;
 }
 
-.brand-title,
-.brand-subtitle,
-.nav-link,
-.btn,
-.hero-kicker,
+/* Kicker mais limpo e moderno */
 .section-kicker,
+.hero-kicker,
+.conversion-kicker,
 .project-type,
-.feature-num,
-.stat-label,
-.hero-proof-item,
-.tech-list li,
-.footer-links a,
-.social-icon {
+.badge,
+.stat-label {
   font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.13em;
 }
+
+/* ─────────────────────────────────────────────────────────
+   HERO
+   ───────────────────────────────────────────────────────── */
+
+.hero-title {
+  font-size: clamp(3.25rem, 7.4vw, 5.35rem);
+  line-height: 0.98;
+  letter-spacing: -0.066em;
+  max-width: 12.5ch;
+  padding-right: 0.18em;
+  margin-right: -0.03em;
+  overflow: visible;
+}
+
+.hero-text {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.82;
+  max-width: 54ch;
+}
+
+.hero-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+}
+
+.hero-proof-item {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   MENU / MARCA
+   ───────────────────────────────────────────────────────── */
 
 .brand-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.brand-subtitle {
+  font-family: var(--font-ui);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.12em;
 }
 
-.brand-subtitle,
-.nav-link,
-.hero-kicker,
-.section-kicker,
-.project-type,
-.stat-label {
+.brand-mark,
+.brand-svg-wrap text {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.nav-link {
+  font-family: var(--font-ui);
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-.btn,
 .nav-link.nav-cta {
+  font-family: var(--font-ui);
   font-weight: 700;
   letter-spacing: 0.055em;
 }
 
-.brand-mark,
-.brand-svg-wrap text,
-.footer-brand-link text,
-.footer-logo text {
+/* ─────────────────────────────────────────────────────────
+   BOTÕES
+   ───────────────────────────────────────────────────────── */
+
+.btn {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CARDS, TEXTOS E LISTAS
+   ───────────────────────────────────────────────────────── */
+
+.card,
+.card p,
+.feature-card p,
+.preview-card p,
+.project-card p,
+.service-card p,
+.skill-card p,
+.contact-info-item,
+.footer-shell {
+  font-family: var(--font-body);
+}
+
+.card p,
+.feature-card p,
+.preview-card p,
+.project-card p,
+.service-card p,
+.skill-card p {
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.74;
+}
+
+.feature-num,
+.stat-num {
   font-family: var(--font-display);
   font-weight: 800;
+  letter-spacing: -0.06em;
 }
 
-strong,
-b {
-  font-weight: 700;
+.tech-list li {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-@media (max-width: 720px) {
-  .hero-title {
-    letter-spacing: -0.045em;
+/* ─────────────────────────────────────────────────────────
+   FAIXAS DE CHAMADA / CTA
+   ───────────────────────────────────────────────────────── */
+
+.highlight-band blockquote,
+.conversion-copy h2 {
+  max-width: 100%;
+  padding-right: 0.18em;
+  overflow: visible;
+}
+
+.highlight-band blockquote {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+}
+
+.conversion-copy h2 {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  line-height: 1.12;
+}
+
+.conversion-copy p,
+.cta-note {
+  font-family: var(--font-body);
+  letter-spacing: -0.012em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   FORMULÁRIOS
+   ───────────────────────────────────────────────────────── */
+
+label,
+input,
+textarea,
+select,
+.form-control,
+.form-label {
+  font-family: var(--font-ui);
+}
+
+input,
+textarea,
+select {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────── */
+
+.site-footer,
+.site-footer p,
+.footer-atendimento,
+.footer-nav a,
+.footer-contact a {
+  font-family: var(--font-body);
+}
+
+.footer-brand-title,
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SEGURANÇA CONTRA CORTE DE TEXTO
+   ───────────────────────────────────────────────────────── */
+
+.section,
+.section .container,
+.section-sm,
+.section-sm .container,
+.section-head,
+.section-title,
+.section-subtitle,
+.section-kicker,
+.hero-copy,
+.hero-title,
+.hero-text,
+.highlight-band,
+.conversion-band,
+.conversion-copy {
+  overflow: visible;
+}
+
+/* Mantém quebras bonitas sem espremer a última letra */
+:where(h1, h2, h3, h4, .hero-title, .section-title, .highlight-band blockquote) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+:where(p, li, blockquote, .section-subtitle, .hero-text) {
+  text-wrap: pretty;
+}
+
+/* ─────────────────────────────────────────────────────────
+   RESPONSIVO
+   ───────────────────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  .section-head,
+  .section-head.reveal {
+    max-width: 100%;
+    padding-right: clamp(18px, 5vw, 36px);
   }
 
   .section-title {
-    letter-spacing: -0.035em;
+    font-size: clamp(2.15rem, 7vw, 2.8rem);
+    letter-spacing: -0.048em;
+    padding-right: 0.18em;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+    font-size: clamp(3rem, 10vw, 4.45rem);
+    letter-spacing: -0.06em;
+    padding-right: 0.16em;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    letter-spacing: -0.008em;
+  }
+
+  .section-head,
+  .section-head.reveal {
+    padding-right: 20px;
+    margin-bottom: 44px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+    padding-right: 0.14em;
+  }
+
+  .section-subtitle {
+    max-width: 100%;
+    padding-right: 0;
+    font-size: 0.98rem;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 12vw, 3.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.052em;
+    padding-right: 0.12em;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-kicker,
+  .section-kicker {
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-head,
+  .section-head.reveal {
+    padding-right: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(1.86rem, 10.8vw, 2.25rem);
+    letter-spacing: -0.04em;
+    padding-right: 0.1em;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 13vw, 3.15rem);
+    letter-spacing: -0.046em;
+  }
+
+  .btn {
+    letter-spacing: 0.03em;
+  }
+}
+
+/* =========================================================
+   AJUSTE FINAL — SECTION HEAD / TITULOS GRANDES
+   Corrige títulos largos demais com Geist + Plus Jakarta
+   ========================================================= */
+
+.section-head,
+.section-head.reveal {
+  max-width: 820px;
+  padding-right: 0;
+  overflow: visible;
+}
+
+/* Títulos de seção mais elegantes e menos gigantes */
+.section-title {
+  font-family: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(2.45rem, 4.2vw, 4.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  max-width: 13.8ch;
+  padding-right: 0;
+  margin-right: 0;
+  overflow: visible;
+}
+
+/* Parte em destaque do título */
+.section-title em {
+  display: block;
+  font-family: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.94em;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+  max-width: 14.8ch;
+  overflow: visible;
+}
+
+/* Subtítulo da seção */
+.section-subtitle {
+  max-width: 72ch;
+  padding-right: 0;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  line-height: 1.65;
+}
+
+/* Em telas grandes, evita que o título fique exagerado */
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 4rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+  .section-head,
+  .section-head.reveal {
+    max-width: 100%;
+  }
+
+  .section-title {
+    max-width: 13ch;
+    font-size: clamp(2.35rem, 7vw, 3.4rem);
+  }
+
+  .section-title em {
+    max-width: 13.5ch;
+  }
+}
+
+/* Celular */
+@media (max-width: 640px) {
+  .section-title {
+    max-width: 100%;
+    font-size: clamp(2.05rem, 11vw, 2.85rem);
+    letter-spacing: -0.045em;
+  }
+
+  .section-title em {
+    max-width: 100%;
+    font-size: 0.96em;
+    letter-spacing: -0.05em;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
   }
 }
