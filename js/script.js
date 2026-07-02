@@ -487,10 +487,7 @@ function initProductPage() {
 }
 
 initRevealObserver();
-initScrollProgress();
 initHeaderState();
 initMobileMenu();
 initContactForm();
-initHeroParticles();
-initKickerBlink();
 initProductPage();
