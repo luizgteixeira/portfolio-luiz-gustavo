@@ -35,27 +35,32 @@
 }
 
 :root {
-  --ink: #0D0D0D;
-  --ink-soft: #F2DDD5;
-  --ink-mid: #737373;
-  --surface: rgba(242, 221, 213, 0.78);
-  --surface-hi: rgba(242, 185, 153, 0.28);
-  --border: rgba(13, 13, 13, 0.12);
-  --border-hi: rgba(13, 13, 13, 0.18);
-  --border-glow: rgba(242, 178, 121, 0.42);
+  --blue: #354B8C;
+  --teal: #73B8BF;
+  --yellow: #F2C744;
+  --sand: #F2E0BD;
 
-  --gold: #F2B279;
-  --gold-light: #0D0D0D;
-  --gold-bright: #F2B999;
-  --gold-pale: rgba(242, 221, 213, 0.18);
-  --gold-dim: rgba(13, 13, 13, 0.66);
-  --cream: #0D0D0D;
-  --cream-dim: rgba(13, 13, 13, 0.74);
-  --accent-secondary: #F2B279;
-  --accent-strong: #F2B999;
+  --ink: #1F2A4F;
+  --ink-soft: #F2E0BD;
+  --ink-mid: #5D6C8F;
+  --surface: rgba(242, 224, 189, 0.78);
+  --surface-hi: rgba(115, 184, 191, 0.22);
+  --border: rgba(53, 75, 140, 0.16);
+  --border-hi: rgba(53, 75, 140, 0.28);
+  --border-glow: rgba(115, 184, 191, 0.44);
 
-  --text-primary: #0D0D0D;
-  --text-secondary: rgba(13, 13, 13, 0.78);
+  --gold: #F2C744;
+  --gold-light: #354B8C;
+  --gold-bright: #73B8BF;
+  --gold-pale: rgba(242, 224, 189, 0.32);
+  --gold-dim: rgba(53, 75, 140, 0.70);
+  --cream: #354B8C;
+  --cream-dim: rgba(53, 75, 140, 0.76);
+  --accent-secondary: #73B8BF;
+  --accent-strong: #F2C744;
+
+  --text-primary: #1F2A4F;
+  --text-secondary: rgba(31, 42, 79, 0.78);
   --text-muted: rgba(115, 115, 115, 0.94);
 
   --radius-xs: 4px;
@@ -75,11 +80,11 @@
   --transition-med: 0.34s var(--ease-out);
   --transition-slow: 0.60s var(--ease-out);
 
-  --shadow-sm: 0 2px 10px rgba(13, 13, 13, 0.08);
-  --shadow-md: 0 10px 30px rgba(13, 13, 13, 0.10);
-  --shadow-lg: 0 20px 56px rgba(13, 13, 13, 0.14);
-  --shadow-gold: 0 8px 24px rgba(242, 178, 121, 0.16);
-  --shadow-gold-strong: 0 14px 42px rgba(242, 185, 153, 0.22);
+  --shadow-sm: 0 2px 10px rgba(53, 75, 140, 0.08);
+  --shadow-md: 0 10px 30px rgba(53, 75, 140, 0.12);
+  --shadow-lg: 0 20px 56px rgba(53, 75, 140, 0.16);
+  --shadow-gold: 0 8px 24px rgba(115, 184, 191, 0.18);
+  --shadow-gold-strong: 0 14px 42px rgba(53, 75, 140, 0.20);
 }
 
 html {
@@ -92,9 +97,9 @@ html {
 body {
   font-family: 'DM Sans', 'Segoe UI', sans-serif;
   background:
-    radial-gradient(circle at 16% 2%, rgba(242, 178, 121, 0.30), transparent 32%),
-    radial-gradient(circle at 84% 100%, rgba(242, 185, 153, 0.26), transparent 40%),
-    linear-gradient(180deg, #F2DDD5 0%, #F3CDBE 46%, #F2DDD5 100%);
+    radial-gradient(circle at 16% 2%, rgba(115, 184, 191, 0.24), transparent 32%),
+    radial-gradient(circle at 84% 100%, rgba(242, 199, 68, 0.20), transparent 40%),
+    linear-gradient(180deg, #F2E0BD 0%, #E8F3F2 48%, #F2E0BD 100%);
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
@@ -1252,24 +1257,105 @@ main {
 }
 
 /* Palette normalization for inline marks and legacy fixed accents */
+body::before {
+  background:
+    radial-gradient(ellipse 72% 58% at 12% 0%, rgba(255, 255, 255, 0.34) 0%, transparent 54%),
+    radial-gradient(ellipse 52% 44% at 90% 105%, rgba(115, 184, 191, 0.18) 0%, transparent 48%),
+    radial-gradient(ellipse 42% 58% at 50% 50%, rgba(242, 199, 68, 0.12) 0%, transparent 84%);
+}
+
+.site-header::before,
+.site-header.scrolled::before {
+  background: rgba(242, 224, 189, 0.92);
+}
+
+.site-header::after {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(53, 75, 140, 0) 10%,
+      rgba(115, 184, 191, 0.70) 35%,
+      rgba(242, 199, 68, 0.70) 50%,
+      rgba(53, 75, 140, 0.52) 65%,
+      rgba(53, 75, 140, 0) 90%,
+      transparent 100%);
+}
+
+.brand-svg-wrap {
+  background: linear-gradient(135deg, rgba(53, 75, 140, 0.12), rgba(115, 184, 191, 0.18));
+  box-shadow: 0 0 20px rgba(53, 75, 140, 0.10), inset 0 1px 0 rgba(255,255,255,.24);
+}
+
+.card,
+.glass-card {
+  background: rgba(242, 224, 189, 0.72);
+}
+
+.footer-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.12)),
+    rgba(242, 224, 189, 0.68);
+}
+
+.btn-primary,
+.nav-link.nav-cta {
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  color: #fff;
+  box-shadow: 0 4px 22px rgba(53, 75, 140, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.btn-primary:hover,
+.nav-link.nav-cta:hover {
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(242, 224, 189, 0.58);
+  border-color: rgba(53, 75, 140, 0.20);
+  color: var(--blue);
+}
+
+.btn-secondary:hover {
+  background: rgba(115, 184, 191, 0.18);
+  border-color: rgba(53, 75, 140, 0.28);
+}
+
+.badge,
+.hero-proof-item,
+.tech-list li {
+  background: rgba(242, 224, 189, 0.64);
+  border-color: rgba(53, 75, 140, 0.14);
+  color: rgba(31, 42, 79, 0.78);
+}
+
+.whatsapp-float {
+  background: #F2E0BD;
+  box-shadow: 0 12px 28px rgba(53, 75, 140, 0.20);
+}
+
+.whatsapp-float::after {
+  background: rgba(53, 75, 140, 0.94);
+  color: #F2E0BD;
+}
+
 .brand-svg-wrap svg circle:first-of-type,
 .footer-brand-link > svg circle:first-of-type {
-  stroke: var(--gold);
+  stroke: var(--blue);
 }
 
 .brand-svg-wrap svg circle:nth-of-type(2),
 .footer-brand-link > svg circle:nth-of-type(2) {
-  stroke: rgba(242, 221, 213, 0.40);
+  stroke: rgba(115, 184, 191, 0.55);
 }
 
 .brand-svg-wrap svg text,
 .footer-brand-link > svg text {
-  fill: var(--gold-light);
+  fill: var(--blue);
 }
 
 .brand-svg-wrap svg circle:nth-of-type(n+3),
 .footer-brand-link > svg circle:nth-of-type(n+3) {
-  fill: var(--gold-bright);
+  fill: var(--yellow);
 }
 
 input,
