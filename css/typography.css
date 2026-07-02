@@ -1,0 +1,175 @@
+/* =========================================================
+   TYPOGRAPHY.CSS - Luiz Gustavo Dev
+   Fontes locais escolhidas:
+   - Geist: textos, navegacao, botoes e UI
+   - Plus Jakarta Sans: titulos, chamadas e destaques
+
+   Importante: este arquivo NAO inclui os arquivos .TTF.
+   Copie manualmente as fontes para /fonts conforme instrucoes.
+   ========================================================= */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/geist/GEIST-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/geist/GEIST-MEDIUM.TTF') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/geist/GEIST-SEMIBOLD.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/geist/GEIST-BOLD.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/plus-jakarta/PLUSJAKARTASANS-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/plus-jakarta/PLUSJAKARTASANS-EXTRABOLD.TTF') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: 'Geist', 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  --font-ui: 'Geist', 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Geist', 'Cormorant Garamond', Georgia, serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero-title,
+.section-title,
+.stat-num,
+.highlight-band blockquote,
+.footer-brand-title {
+  font-family: var(--font-display);
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+}
+
+.section-title {
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+h3,
+.card h3,
+.preview-card h3,
+.service-card h3,
+.project-card h3 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero-text,
+.section-subtitle,
+.card p,
+.preview-card p,
+.project-body p,
+.contact-info-item span,
+.footer-atendimento,
+p,
+li {
+  font-family: var(--font-body);
+}
+
+.brand-title,
+.brand-subtitle,
+.nav-link,
+.btn,
+.hero-kicker,
+.section-kicker,
+.project-type,
+.feature-num,
+.stat-label,
+.hero-proof-item,
+.tech-list li,
+.footer-links a,
+.social-icon {
+  font-family: var(--font-ui);
+}
+
+.brand-title {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.brand-subtitle,
+.nav-link,
+.hero-kicker,
+.section-kicker,
+.project-type,
+.stat-label {
+  font-weight: 600;
+}
+
+.btn,
+.nav-link.nav-cta {
+  font-weight: 700;
+  letter-spacing: 0.055em;
+}
+
+.brand-mark,
+.brand-svg-wrap text,
+.footer-brand-link text,
+.footer-logo text {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .hero-title {
+    letter-spacing: -0.045em;
+  }
+
+  .section-title {
+    letter-spacing: -0.035em;
+  }
+}
