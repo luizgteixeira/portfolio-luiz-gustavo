@@ -1,25 +1,20 @@
-# Correção de inconsistências
+# Padronização de cache/versionamento
 
 Substitua os arquivos deste pacote na raiz do projeto.
 
 Correção aplicada:
-- Removidas do js/script.js as funções decorativas não chamadas:
-  - initScrollProgress()
-  - initHeroParticles()
-  - initKickerBlink()
-- Removidas chamadas residuais, caso existissem.
-- Mantidas apenas as interações realmente executadas no site:
-  - initRevealObserver()
-  - initHeaderState()
-  - initMobileMenu()
-  - initContactForm()
-  - initProductPage()
-  - initProjectVideos()
-  - initAccessibleMedia()
-- HTMLs atualizados para carregar CSS/JS com cache ?v=20260703-6
+- Todos os CSS locais em todas as páginas HTML agora usam a mesma versão:
+  ?v=20260703-7
+- Todos os JS locais em todas as páginas HTML agora usam a mesma versão:
+  ?v=20260703-7
+- Isso evita que uma página carregue arquivos novos e outra carregue arquivos antigos do cache do navegador.
 
-Decisão:
-Como a etapa anterior simplificou o visual e reduziu animações, não fazia sentido ativar partículas, blink e barra decorativa. A correção mais coerente foi remover código morto.
+Arquivos HTML revisados:
+- index.html
+- servicos.html
+- skills.html
+- projetos.html
+- contato.html
 
 Commit sugerido:
-git commit -m "refactor: remove funções JavaScript não utilizadas"
+git commit -m "chore: padroniza versionamento de assets do site"
