@@ -1,5 +1,5 @@
 /* =========================================================
-   SERVICOS.CSS — MAXIMUM PREMIUM
+   SERVICOS.CSS — layout limpo e responsivo
    ========================================================= */
 
 .service-grid {
@@ -293,4 +293,39 @@
 
 .service-icon {
   background: rgba(255, 255, 255, 0.28);
+}
+
+/* Serviços e processo mais claros em telas menores */
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.process-card::after {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .service-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .service-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .process-card {
+    padding: 24px 20px;
+  }
+
+  .process-step {
+    font-size: 2.3rem;
+  }
 }

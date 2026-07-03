@@ -1,5 +1,5 @@
 /* =========================================================
-   CONTATO.CSS — MAXIMUM PREMIUM
+   CONTATO.CSS — layout limpo e responsivo
    ========================================================= */
 
 .contact-layout {
@@ -263,5 +263,50 @@
   .form-submit .btn {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* Contato responsivo e menos carregado */
+.contact-info-item:hover {
+  transform: translateX(3px);
+}
+
+.avail-dot {
+  animation: none;
+}
+
+@media (max-width: 980px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-panel,
+  .contact-side {
+    padding: 32px 28px;
+  }
+
+  .contact-actions {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-panel,
+  .contact-side {
+    padding: 26px 20px;
+  }
+
+  .contact-actions,
+  .form-submit {
+    display: grid;
+  }
+
+  .form-submit .btn {
+    min-width: 0;
+  }
+
+  .field input,
+  .field textarea {
+    padding: 13px 15px;
   }
 }

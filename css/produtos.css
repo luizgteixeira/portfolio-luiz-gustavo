@@ -663,3 +663,46 @@
     font-size: 2.2rem;
   }
 }
+
+/* Responsividade preventiva para páginas de produto */
+@media (max-width: 980px) {
+  .product-search,
+  .product-layout,
+  .product-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-stage,
+  .gallery-figure,
+  .gallery-main-image {
+    min-height: 420px;
+  }
+
+  .product-title,
+  .product-search-title {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-search,
+  .product-story,
+  .product-specs,
+  .product-price-box,
+  .product-purchase {
+    padding: 22px 18px;
+  }
+
+  .product-search-form,
+  .product-purchase,
+  .product-price-box,
+  .product-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-stage,
+  .gallery-figure,
+  .gallery-main-image {
+    min-height: 320px;
+  }
+}

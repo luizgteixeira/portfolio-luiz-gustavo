@@ -572,3 +572,18 @@ select {
     font-size: 1rem;
   }
 }
+
+/* Ajustes finos de legibilidade */
+@media (max-width: 640px) {
+  .hero-title,
+  .section-title,
+  .conversion-copy h2 {
+    letter-spacing: -0.045em;
+  }
+
+  .section-subtitle,
+  .hero-text,
+  .card p {
+    line-height: 1.72;
+  }
+}

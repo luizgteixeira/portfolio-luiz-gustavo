@@ -1,0 +1,18 @@
+# Ajuste de CSS e responsividade
+
+Substitua os arquivos na raiz do projeto.
+
+Inclui:
+- HTMLs com cache atualizado para ?v=20260703-4
+- CSS em css/
+- js/script.js preservado
+- sitemap.xml e robots.txt preservados
+
+Resumo:
+- Redução de animações decorativas.
+- Remoção do texto "MAXIMUM PREMIUM" dos comentários principais.
+- Responsividade reforçada em hero, menu, contato, projetos, serviços, diferenciais e páginas de produto.
+- Identidade visual preservada, com visual mais limpo e menos carregado.
+
+Commit sugerido:
+git commit -m "style: simplifica CSS e melhora responsividade do site"

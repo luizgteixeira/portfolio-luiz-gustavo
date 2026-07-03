@@ -1,5 +1,5 @@
 /* =========================================================
-   GLOBAL.CSS — Luiz Gustavo — MAXIMUM PREMIUM
+   GLOBAL.CSS — Luiz Gustavo — layout limpo e responsivo
    ========================================================= */
 
 /* ── Brand SVG wrap ─────────────────────────────────────── */
@@ -425,7 +425,6 @@ main {
     border-color var(--transition-med),
     box-shadow var(--transition-med),
     transform var(--transition-med);
-  will-change: transform;
 }
 
 /* Top gloss reflection */
@@ -1123,13 +1122,11 @@ main {
 
 /* ── Magnetic button override ───────────────────────────── */
 .btn {
-  will-change: transform;
 }
 
 /* ── Card tilt — preserve depth ─────────────────────────── */
 .card {
-  will-change: transform;
-  transform-style: preserve-3d;
+transform-style: preserve-3d;
 }
 
 /* ── Hero canvas layer ──────────────────────────────────── */
@@ -1381,4 +1378,147 @@ input,
 textarea,
 select {
   caret-color: var(--gold);
+}
+
+/* Ajuste geral: visual mais limpo e responsivo */
+:root {
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --transition-slow: 0.42s var(--ease-out);
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body::before,
+body::after {
+  opacity: 0.18;
+}
+
+.section::before {
+  opacity: 0.28;
+}
+
+.card,
+.glass-card,
+.footer-shell,
+.conversion-band {
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover,
+.highlight-band:hover {
+  transform: translateY(-3px);
+}
+
+.section-kicker::after,
+.footer-shell::before,
+.whatsapp-float {
+  animation: none;
+}
+
+.btn::before,
+.nav-link::after,
+.project-visual::after {
+  opacity: 0.55;
+}
+
+@media (max-width: 980px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  main {
+    padding-top: calc(var(--header-height) + 18px);
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-sm {
+    padding: 48px 0;
+  }
+
+  .section-head,
+  .section-head.reveal {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: clamp(2.1rem, 7vw, 2.85rem);
+  }
+
+  .section-subtitle {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .conversion-band {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .conversion-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-sm {
+    padding: 38px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.95rem, 10vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  .section-kicker {
+    letter-spacing: 0.16em;
+    font-size: 0.64rem;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 48px;
+    padding-inline: 18px;
+  }
+
+  .conversion-band {
+    padding: 24px 20px;
+  }
+
+  .footer-main {
+    align-items: stretch;
+  }
+
+  .footer-socials {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn::before,
+  .nav-link::after,
+  .hero::after,
+  .project-visual::before,
+  .project-visual::after {
+    animation: none;
+    transition: none;
+  }
 }

@@ -1,5 +1,5 @@
 /* =========================================================
-   SKILLS.CSS — MAXIMUM PREMIUM
+   SKILLS.CSS — layout limpo e responsivo
    ========================================================= */
 
 .skills-layout {
@@ -392,4 +392,45 @@
       rgba(242, 178, 121, 0.22) 0%,
       rgba(242, 221, 213, 0.78) 46%,
       rgba(255, 255, 255, 0.22) 100%);
+}
+
+/* Diferenciais com leitura melhor */
+.skill-bar-fill::after,
+.philosophy-strip::before {
+  animation: none;
+}
+
+.skill-item:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1100px) {
+  .skills-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+
+  .skills-panel {
+    padding: 28px 22px;
+  }
+
+  .skill-item:hover {
+    transform: none;
+  }
+
+  .philosophy-strip {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 24px;
+  }
+
+  .philosophy-quote {
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+  }
 }
