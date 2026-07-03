@@ -6,12 +6,15 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  max-width: 100%;
 }
 
 .project-card {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
   transition:
     transform var(--transition-med),
     border-color var(--transition-med),
@@ -41,6 +44,7 @@
   aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
   border-bottom: 1px solid var(--border);
   background: var(--ink-mid);
 }
@@ -213,6 +217,11 @@
     grid-template-columns: 1fr;
   }
 
+  .project-card:hover,
+  .card:hover {
+    transform: none;
+  }
+
   .project-visual--branded {
     height: clamp(220px, 58vw, 320px);
   }
@@ -304,6 +313,7 @@
   height: 100%;
   object-fit: cover;
   background: transparent;
+  display: block;
   filter: saturate(1.04) contrast(1.08) brightness(1.02);
   transform: none;
   transition:
@@ -318,6 +328,10 @@
 .project-visual--video:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
+}
+
+.project-visual--delaflor .project-video {
+  pointer-events: none;
 }
 
 /* Logo centralizada */

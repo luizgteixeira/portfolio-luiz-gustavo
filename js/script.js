@@ -486,8 +486,53 @@ function initProductPage() {
   initProductSearch();
 }
 
+function initProjectVideos() {
+  const videos = Array.from(document.querySelectorAll('.project-video'));
+  if (!videos.length) return;
+
+  const playVideo = (video) => {
+    video.muted = true;
+    video.playsInline = true;
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {
+        video.setAttribute('data-video-paused', 'true');
+      });
+    }
+  };
+
+  if (!('IntersectionObserver' in window) || prefersReducedMotion) {
+    videos.forEach(playVideo);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!(video instanceof HTMLVideoElement)) return;
+
+        if (entry.isIntersecting) {
+          playVideo(video);
+          return;
+        }
+
+        video.pause();
+      });
+    },
+    {
+      rootMargin: '120px 0px',
+      threshold: 0.2,
+    }
+  );
+
+  videos.forEach((video) => observer.observe(video));
+}
+
 initRevealObserver();
 initHeaderState();
 initMobileMenu();
 initContactForm();
 initProductPage();
+initProjectVideos();
