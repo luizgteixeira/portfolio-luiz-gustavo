@@ -1608,3 +1608,82 @@ body::after {
   }
 }
 
+/* ─────────────────────────────────────────────────────────
+   Correção mobile: evitar overflow horizontal no carregamento
+   ───────────────────────────────────────────────────────── */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+body {
+  position: relative;
+}
+
+.site-header,
+main,
+footer {
+  max-width: 100vw;
+}
+
+.site-header,
+main {
+  overflow-x: clip;
+}
+
+.container {
+  width: min(calc(100% - 32px), var(--container));
+  max-width: calc(100vw - 32px);
+}
+
+.header-inner,
+.hero-grid,
+.hero-copy,
+.hero-panel,
+.section,
+.section > .container,
+.card,
+.glass-card,
+.project-grid,
+.service-grid,
+.skills-layout,
+.contact-layout,
+.conversion-band,
+.footer-shell {
+  min-width: 0;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+    max-width: calc(100vw - 24px);
+  }
+
+  .section,
+  .hero,
+  .features-section,
+  .conversion-section {
+    overflow-x: clip;
+  }
+
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+  }
+}

@@ -1870,3 +1870,75 @@
     padding: 28px 22px;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   Correção mobile da home
+   ───────────────────────────────────────────────────────── */
+
+.hero {
+  overflow-x: clip;
+}
+
+.hero::after {
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-grid,
+.hero-copy,
+.hero-panel,
+.hero-photo-wrap,
+.hero-photo-frame {
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-copy,
+  .hero-panel {
+    max-width: 100%;
+  }
+
+  .hero-panel {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-photo-wrap {
+    max-width: min(300px, calc(100vw - 48px));
+  }
+
+  .hero-badge,
+  .hero-tag {
+    left: auto;
+    right: auto;
+    max-width: calc(100vw - 48px);
+  }
+
+  .hero-badge {
+    bottom: -10px;
+  }
+
+  .hero-tag {
+    top: -10px;
+  }
+
+  .hero-photo-wrap::after {
+    left: 10%;
+    right: 10%;
+  }
+}

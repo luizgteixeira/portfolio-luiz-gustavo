@@ -564,3 +564,82 @@
   }
 }
 
+/* ─────────────────────────────────────────────────────────
+   Correção do menu toggle em dispositivos móveis
+   ───────────────────────────────────────────────────────── */
+
+.site-header {
+  overflow: visible;
+}
+
+.site-header .container,
+.header-inner {
+  z-index: 2;
+}
+
+.menu-toggle {
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    overflow: visible;
+  }
+
+  .site-header::before {
+    pointer-events: none;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: calc(var(--header-height) + 8px);
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - var(--header-height) - 24px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .site-nav[aria-hidden="true"] {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .site-nav[aria-hidden="false"] {
+    visibility: visible;
+  }
+
+  .nav-list {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav {
+    left: 10px;
+    right: 10px;
+    max-width: calc(100vw - 20px);
+  }
+}
