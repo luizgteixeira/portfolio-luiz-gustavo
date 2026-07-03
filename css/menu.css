@@ -543,3 +543,24 @@
     text-overflow: ellipsis;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   Acessibilidade do menu mobile
+   ───────────────────────────────────────────────────────── */
+
+.menu-toggle:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (max-width: 980px) {
+  .site-nav[aria-hidden="true"] {
+    pointer-events: none;
+  }
+
+  .site-nav.is-open {
+    pointer-events: auto;
+  }
+}
+

@@ -1,18 +1,22 @@
-# Ajuste de CSS e responsividade
+# Melhorias de acessibilidade
 
-Substitua os arquivos na raiz do projeto.
+Substitua os arquivos deste pacote na raiz do projeto.
 
 Inclui:
-- HTMLs com cache atualizado para ?v=20260703-4
-- CSS em css/
-- js/script.js preservado
-- sitemap.xml e robots.txt preservados
+- HTMLs com cache atualizado para ?v=20260703-5
+- CSS com melhorias de foco, contraste, menu mobile e redução de movimento
+- JS com menu mobile mais acessível
 
 Resumo:
-- Redução de animações decorativas.
-- Remoção do texto "MAXIMUM PREMIUM" dos comentários principais.
-- Responsividade reforçada em hero, menu, contato, projetos, serviços, diferenciais e páginas de produto.
-- Identidade visual preservada, com visual mais limpo e menos carregado.
+- main agora recebe tabindex="-1" para melhorar o comportamento do skip-link.
+- links de marca ganharam aria-label mais claro.
+- SVGs decorativos com aria-hidden receberam focusable="false".
+- vídeos decorativos ficam fora da navegação por teclado.
+- menu mobile recebeu aria-hidden em telas pequenas, bloqueio de rolagem, foco inicial e ciclo de foco com Tab.
+- Escape fecha o menu e devolve foco ao botão.
+- prefers-reduced-motion pausa vídeos decorativos e reduz transições/animações.
+- foco visível reforçado para teclado.
+- suporte melhor a alto contraste e forced-colors.
 
 Commit sugerido:
-git commit -m "style: simplifica CSS e melhora responsividade do site"
+git commit -m "a11y: melhora acessibilidade do menu e navegação do site"

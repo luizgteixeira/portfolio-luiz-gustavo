@@ -1522,3 +1522,89 @@ body::after {
     transition: none;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   Acessibilidade: foco, contraste e redução de movimento
+   ───────────────────────────────────────────────────────── */
+
+#main-content:focus {
+  outline: none;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(242, 199, 68, 0.22);
+}
+
+.skip-link {
+  z-index: 5000;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.is-menu-open {
+  overflow: hidden;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --text-secondary: rgba(31, 42, 79, 0.92);
+    --text-muted: rgba(31, 42, 79, 0.82);
+    --border: rgba(31, 42, 79, 0.42);
+    --border-hi: rgba(31, 42, 79, 0.62);
+  }
+
+  .btn,
+  .nav-link,
+  .card,
+  .glass-card,
+  .field input,
+  .field textarea {
+    border-width: 2px;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn,
+  .nav-link,
+  .card,
+  .glass-card,
+  .menu-toggle,
+  .social-icon {
+    border: 1px solid ButtonText;
+  }
+
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+    scroll-behavior: auto;
+    transition-duration: 0.001ms;
+  }
+
+  .reveal,
+  .skill-item,
+  .card,
+  .hero-photo,
+  .project-video {
+    opacity: 1;
+    transform: none;
+  }
+}
+

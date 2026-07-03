@@ -35,10 +35,10 @@
   <meta name="twitter:image" content="https://luizgustavodev.com/img/luiz-home.png">
   <meta name="twitter:image:alt" content="Luiz Gustavo, desenvolvedor full-stack">
   <link rel="icon" type="image/png" sizes="256x256" href="img/favicon.png">
-  <link rel="stylesheet" href="css/global.css?v=20260703-4">
-  <link rel="stylesheet" href="css/menu.css?v=20260703-4">
-  <link rel="stylesheet" href="css/projetos.css?v=20260703-4">
-  <link rel="stylesheet" href="css/typography.css?v=20260703-4">
+  <link rel="stylesheet" href="css/global.css?v=20260703-5">
+  <link rel="stylesheet" href="css/menu.css?v=20260703-5">
+  <link rel="stylesheet" href="css/projetos.css?v=20260703-5">
+  <link rel="stylesheet" href="css/typography.css?v=20260703-5">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,8 +95,8 @@
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="index.html" class="brand">
-          <span class="brand-svg-wrap"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+        <a href="index.html" class="brand" aria-label="Página inicial Luiz Gustavo Dev">
+          <span class="brand-svg-wrap"><svg focusable="false" width="26" height="26" viewBox="0 0 26 26" fill="none"
               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="13" cy="13" r="12" stroke="#F2B279" stroke-width="1.2" />
               <circle cx="13" cy="13" r="8.5" stroke="rgba(242,221,213,.4)" stroke-width=".6" />
@@ -133,7 +133,7 @@
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <section class="section">
       <div class="container">
 
@@ -149,7 +149,7 @@
 
           <article class="card project-card project-card--featured reveal reveal-delay-1">
             <div class="project-visual project-visual--symbol project-visual--video project-visual--vinc" aria-hidden="true">
-              <video class="project-video" src="video/vinc-video.mp4" muted loop autoplay playsinline
+              <video class="project-video" tabindex="-1" src="video/vinc-video.mp4" muted loop autoplay playsinline
                 preload="metadata" poster="img/vinc.png" aria-hidden="true"></video>
             </div>
             <div class="project-body">
@@ -169,7 +169,7 @@
 
           <article class="card project-card reveal reveal-delay-2">
             <div class="project-visual project-visual--symbol project-visual--video project-visual--fauny" aria-hidden="true">
-              <video class="project-video" src="video/fauny-video.mp4" muted loop autoplay playsinline
+              <video class="project-video" tabindex="-1" src="video/fauny-video.mp4" muted loop autoplay playsinline
                 preload="metadata" poster="img/fauny.png" aria-hidden="true"></video>
             </div>
             <div class="project-body">
@@ -192,12 +192,11 @@
               class="project-visual project-visual--branded project-visual--video project-visual--delaflor"
               aria-label="Abrir o site De La Flor em nova aba">
               <div class="project-visual-bg"></div>
-              <video class="project-video" src="video/de-la-flor1.mp4?v=20260417-1307" muted loop autoplay playsinline
+              <video class="project-video" tabindex="-1" src="video/de-la-flor1.mp4?v=20260417-1307" muted loop autoplay playsinline
                 preload="metadata" poster="img/de-la-flor2.png" aria-hidden="true"></video>
               <div class="project-visual-overlay">
                 <span class="project-visual-cta">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
@@ -243,8 +242,8 @@
       <div class="footer-shell">
         <div class="footer-main">
           <div class="footer-brand">
-            <a href="index.html" class="footer-brand-link" aria-label="Início">
-              <span class="brand-svg-wrap"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+            <a href="index.html" class="footer-brand-link" aria-label="Página inicial Luiz Gustavo Dev">
+              <span class="brand-svg-wrap"><svg focusable="false" width="26" height="26" viewBox="0 0 26 26" fill="none"
                   xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <circle cx="13" cy="13" r="12" stroke="#F2B279" stroke-width="1.2" />
                   <circle cx="13" cy="13" r="8.5" stroke="rgba(242,221,213,.4)" stroke-width=".6" />
@@ -294,9 +293,9 @@
     </div>
   </footer>
 
-  <script src="js/script.js?v=20260703-4" defer></script>
+  <script src="js/script.js?v=20260703-5" defer></script>
   <a href="https://wa.me/5531992609970?text=Ol%C3%A1%2C%20Luiz!%20Vi%20seus%20projetos%20e%20quero%20algo%20parecido%20para%20o%20meu%20neg%C3%B3cio."
-    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Luiz Gustavo no WhatsApp"
     data-tooltip="Vamos conversar sobre sua ideia?"><img src="img/whatsapp.png" alt="WhatsApp" width="512" height="512"
       loading="lazy" decoding="async"></a>
 </body>
