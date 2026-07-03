@@ -1,3 +1,7 @@
+// Mantemos apenas interações essenciais: revelação, cabeçalho, menu,
+// formulário, produtos, vídeos e acessibilidade. Efeitos decorativos
+// não utilizados foram removidos para evitar código morto.
+
 'use strict';
 
 const prefersReducedMotion = window.matchMedia(
@@ -40,42 +44,6 @@ function initRevealObserver() {
   );
 
   revealElements.forEach((element) => observer.observe(element));
-}
-
-function initScrollProgress() {
-  const progressBar = document.createElement('div');
-  progressBar.id = 'scroll-progress';
-  progressBar.style.cssText = [
-    'position:fixed',
-    'top:0',
-    'left:0',
-    'height:2px',
-    'z-index:9998',
-    'background:linear-gradient(90deg,#F2B279,#F2DDD5,#F2B999)',
-    'background-size:200% 100%',
-    'width:0%',
-    'pointer-events:none',
-    'transition:width .08s linear',
-    'animation:progress-shimmer 2s linear infinite',
-    'box-shadow:0 0 8px rgba(242,178,121,0.5)',
-  ].join(';');
-
-  document.head.insertAdjacentHTML(
-    'beforeend',
-    '<style>@keyframes progress-shimmer{0%{background-position:0%}100%{background-position:200%}}</style>'
-  );
-  document.body.prepend(progressBar);
-
-  const updateProgress = () => {
-    const scrollableHeight = document.body.scrollHeight - window.innerHeight;
-    const percentage =
-      scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-    progressBar.style.width = `${Math.min(percentage, 100)}%`;
-  };
-
-  updateProgress();
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
 }
 
 function initHeaderState() {
@@ -260,121 +228,6 @@ function initContactForm() {
       submitButton.textContent = originalLabel;
     }, 1800);
   });
-}
-
-function initHeroParticles() {
-  const hero = document.querySelector('.hero');
-  if (!hero || prefersReducedMotion || window.innerWidth < 900) return;
-
-  const canvas = document.createElement('canvas');
-  canvas.style.cssText = [
-    'position:absolute',
-    'inset:0',
-    'width:100%',
-    'height:100%',
-    'pointer-events:none',
-    'z-index:0',
-    'opacity:0.5',
-  ].join(';');
-  hero.prepend(canvas);
-
-  const context = canvas.getContext('2d');
-  if (!context) return;
-
-  let width = 0;
-  let height = 0;
-  let particles = [];
-  const particleCount = Math.max(18, Math.min(36, Math.round(window.innerWidth / 40)));
-
-  function resize() {
-    width = canvas.width = hero.offsetWidth;
-    height = canvas.height = hero.offsetHeight;
-  }
-
-  function createParticle() {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = 0.12 + Math.random() * 0.18;
-    return {
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-      radius: 1.2 + Math.random() * 1.3,
-      alpha: 0.18 + Math.random() * 0.22,
-    };
-  }
-
-  function initialize() {
-    resize();
-    particles = Array.from({ length: particleCount }, createParticle);
-  }
-
-  function draw() {
-    context.clearRect(0, 0, width, height);
-
-    particles.forEach((particle) => {
-      particle.x += particle.vx;
-      particle.y += particle.vy;
-
-      if (particle.x < 0) particle.x = width;
-      if (particle.x > width) particle.x = 0;
-      if (particle.y < 0) particle.y = height;
-      if (particle.y > height) particle.y = 0;
-    });
-
-    for (let i = 0; i < particles.length; i += 1) {
-      for (let j = i + 1; j < particles.length; j += 1) {
-        const first = particles[i];
-        const second = particles[j];
-        const deltaX = first.x - second.x;
-        const deltaY = first.y - second.y;
-        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-        if (distance > 110) continue;
-
-        context.beginPath();
-        context.strokeStyle = `rgba(242,178,121,${0.16 * (1 - distance / 110)})`;
-        context.lineWidth = 0.5;
-        context.moveTo(first.x, first.y);
-        context.lineTo(second.x, second.y);
-        context.stroke();
-      }
-    }
-
-    particles.forEach((particle) => {
-      context.beginPath();
-      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      context.fillStyle = `rgba(242,221,213,${particle.alpha})`;
-      context.fill();
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  initialize();
-  draw();
-  window.addEventListener('resize', initialize);
-}
-
-function initKickerBlink() {
-  const kicker = document.querySelector('.hero-kicker');
-  if (!kicker || prefersReducedMotion) return;
-
-  const cursor = document.createElement('span');
-  cursor.textContent = '|';
-  cursor.setAttribute('aria-hidden', 'true');
-  cursor.style.cssText = [
-    'color:var(--gold)',
-    'font-weight:300',
-    'margin-left:4px',
-    'animation:kicker-blink .9s step-end infinite',
-  ].join(';');
-
-  document.head.insertAdjacentHTML(
-    'beforeend',
-    '<style>@keyframes kicker-blink{0%,100%{opacity:1}50%{opacity:0}}</style>'
-  );
-  kicker.appendChild(cursor);
 }
 
 function formatCurrency(value) {

@@ -1,22 +1,25 @@
-# Melhorias de acessibilidade
+# Correção de inconsistências
 
 Substitua os arquivos deste pacote na raiz do projeto.
 
-Inclui:
-- HTMLs com cache atualizado para ?v=20260703-5
-- CSS com melhorias de foco, contraste, menu mobile e redução de movimento
-- JS com menu mobile mais acessível
+Correção aplicada:
+- Removidas do js/script.js as funções decorativas não chamadas:
+  - initScrollProgress()
+  - initHeroParticles()
+  - initKickerBlink()
+- Removidas chamadas residuais, caso existissem.
+- Mantidas apenas as interações realmente executadas no site:
+  - initRevealObserver()
+  - initHeaderState()
+  - initMobileMenu()
+  - initContactForm()
+  - initProductPage()
+  - initProjectVideos()
+  - initAccessibleMedia()
+- HTMLs atualizados para carregar CSS/JS com cache ?v=20260703-6
 
-Resumo:
-- main agora recebe tabindex="-1" para melhorar o comportamento do skip-link.
-- links de marca ganharam aria-label mais claro.
-- SVGs decorativos com aria-hidden receberam focusable="false".
-- vídeos decorativos ficam fora da navegação por teclado.
-- menu mobile recebeu aria-hidden em telas pequenas, bloqueio de rolagem, foco inicial e ciclo de foco com Tab.
-- Escape fecha o menu e devolve foco ao botão.
-- prefers-reduced-motion pausa vídeos decorativos e reduz transições/animações.
-- foco visível reforçado para teclado.
-- suporte melhor a alto contraste e forced-colors.
+Decisão:
+Como a etapa anterior simplificou o visual e reduziu animações, não fazia sentido ativar partículas, blink e barra decorativa. A correção mais coerente foi remover código morto.
 
 Commit sugerido:
-git commit -m "a11y: melhora acessibilidade do menu e navegação do site"
+git commit -m "refactor: remove funções JavaScript não utilizadas"
