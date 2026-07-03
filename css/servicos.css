@@ -4,7 +4,7 @@
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
@@ -226,11 +226,6 @@
 }
 
 @media (min-width: 1600px) {
-  .service-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-  }
-
   .service-card {
     padding: 36px 30px;
   }
