@@ -1,55 +1,59 @@
 # Luiz Gustavo Dev
 
-Portfólio profissional e site institucional de **Luiz Gustavo Dev**, desenvolvido com `HTML5`, `CSS3` e `JavaScript` puro.
+Portfólio profissional e site institucional de **Luiz Gustavo Dev**, criado com `HTML5`, `CSS3` e `JavaScript` puro.
 
-O projeto está em produção como vitrine comercial para apresentação de serviços, diferenciais, projetos entregues e canais de contato. A proposta é unir uma interface visualmente premium com navegação objetiva, boa responsividade e interações leves, sem depender de frameworks ou etapa de build.
+O site funciona como vitrine comercial para apresentar serviços, diferenciais, projetos em destaque e canais de contato. A proposta é entregar uma experiência direta, responsiva e visualmente consistente, sem frameworks, etapa de build ou dependências desnecessárias.
 
 ## Visão Geral
 
-Este repositório reúne as páginas principais do portfólio:
+Este repositório contém um site estático composto pelas páginas principais:
 
-- `index.html` — apresentação inicial, proposta de valor, chamadas para contato e vídeo demonstrativo
-- `servicos.html` — serviços oferecidos e estrutura de entrega
-- `skills.html` — diferenciais técnicos e estratégicos
-- `projetos.html` — projetos, cases e demonstrações visuais
-- `contato.html` — formulário de contato e canais diretos
+- `index.html` - apresentação inicial, proposta de valor, tecnologias, projetos e chamada para contato
+- `servicos.html` - serviços oferecidos e estrutura de entrega
+- `skills.html` - diferenciais técnicos, estratégicos e de experiência do usuário
+- `projetos.html` - projetos em destaque com cards, vídeos e links externos
+- `contato.html` - formulário de contato e canais diretos
 
-O site foi pensado para:
+O foco do projeto é:
 
-- apresentar serviços de desenvolvimento web com clareza
-- transmitir confiança para visitantes e possíveis clientes
-- funcionar bem em desktop, tablet e celular
-- manter boa leitura, hierarquia visual e chamadas de ação
-- usar interações em JavaScript apenas onde elas melhoram a experiência
+- comunicar rapidamente quem sou, o que faço e como entrar em contato
+- apresentar serviços de desenvolvimento web, apps e sistemas com clareza
+- destacar projetos reais, como Vinc, Fauny e De La Flor
+- funcionar bem em desktop, tablet e smartphones
+- manter boa leitura, SEO básico, acessibilidade e navegação simples
 
 ## Destaques Técnicos
 
-- Layout responsivo com CSS modular por página
-- Menu mobile acessível com controle de `aria-expanded`
+- Estrutura estática com HTML semântico
+- CSS modular por responsabilidade e por página
+- Menu mobile com `aria-expanded`, fechamento por clique externo e tecla `Escape`
+- Layout responsivo validado em larguras de `320px`, `360px`, `390px`, `414px`, `768px` e `980px`
+- Cards de projetos com vídeos locais usando `object-fit: cover`
+- Link externo do projeto De La Flor preservado em nova aba
 - Animações progressivas com `IntersectionObserver`
-- Respeito à preferência de movimento reduzido com `prefers-reduced-motion`
-- Barra de progresso de rolagem criada via JavaScript
-- Estado visual do cabeçalho conforme a rolagem da página
-- Efeito de partículas em `canvas` no hero, ativado apenas em telas maiores
-- Cursor animado no destaque inicial
-- Formulário de contato com validação nativa e geração de `mailto`
-- Módulos JavaScript reutilizáveis para galeria, preço, quantidade e busca em páginas de produto
-- Estrutura básica de SEO com metatags, favicon, `robots.txt` e `sitemap.xml`
+- Suporte a `prefers-reduced-motion`
+- Barra de progresso de rolagem em JavaScript
+- Cabeçalho com estado visual conforme rolagem
+- Botão flutuante do WhatsApp ajustado para mobile e tablet
+- Formulário de contato com validação nativa e geração de mensagem via `mailto`
+- SEO básico com metatags, favicon, `robots.txt` e `sitemap.xml`
 
 ## JavaScript
 
-Embora o projeto seja estático, o arquivo [`js/script.js`](js/script.js) concentra várias interações de interface usando **Vanilla JavaScript**:
+O projeto usa **Vanilla JavaScript** em [`js/script.js`](js/script.js), sem bibliotecas externas.
 
-- `initRevealObserver()` controla as animações de entrada dos elementos
-- `initScrollProgress()` cria a barra superior de progresso da página
-- `initHeaderState()` altera o cabeçalho após o início da rolagem
-- `initMobileMenu()` gerencia abertura, fechamento, links, clique externo e tecla `Escape`
-- `initContactForm()` monta a mensagem de e-mail a partir do formulário
-- `initHeroParticles()` desenha e anima partículas no `canvas`
-- `initKickerBlink()` adiciona o cursor visual no texto inicial
-- `initProductGallery()`, `initProductPricing()`, `initProductQuantity()` e `initProductSearch()` deixam prontos módulos de produto reutilizáveis
+Principais interações:
 
-A escolha por JavaScript puro foi intencional: manter o site leve, fácil de auditar no GitHub e sem dependências desnecessárias para uma landing page/portfólio institucional.
+- `initMobileMenu()` gerencia abertura, fechamento, clique externo e `Escape`
+- `initRevealObserver()` controla animações de entrada
+- `initScrollProgress()` atualiza a barra superior de progresso
+- `initHeaderState()` altera o cabeçalho após rolagem
+- `initContactForm()` monta a mensagem de contato a partir do formulário
+- `initHeroParticles()` desenha partículas no `canvas` do hero em telas maiores
+- `initKickerBlink()` aplica o cursor visual no destaque inicial
+- módulos de produto reutilizáveis seguem disponíveis para galeria, preço, quantidade e busca
+
+A escolha por JavaScript puro mantém o projeto leve, auditável e fácil de publicar em hospedagens estáticas.
 
 ## Estrutura do Projeto
 
@@ -63,11 +67,16 @@ A escolha por JavaScript puro foi intencional: manter o site leve, fácil de aud
 |   |-- produtos.css
 |   |-- projetos.css
 |   |-- servicos.css
-|   `-- skills.css
+|   |-- skills.css
+|   `-- typography.css
+|-- fonts/
 |-- img/
 |-- js/
 |   `-- script.js
 |-- video/
+|   |-- de-la-flor1.mp4
+|   |-- fauny-video.mp4
+|   `-- vinc-video.mp4
 |-- contato.html
 |-- index.html
 |-- projetos.html
@@ -82,51 +91,58 @@ A escolha por JavaScript puro foi intencional: manter o site leve, fácil de aud
 - `HTML5`
 - `CSS3`
 - `JavaScript` puro
-- Google Fonts
+- Fontes locais e Google Fonts
 - Imagens e vídeos locais
 
 ## Como Executar Localmente
 
-Como o projeto é estático, basta abrir o arquivo `index.html` no navegador.
+Por ser um site estático, é possível abrir `index.html` diretamente no navegador.
 
-Se preferir rodar com servidor local, use uma extensão como Live Server no VS Code ou qualquer servidor estático simples.
-
-Exemplo com Python:
+Para testar com servidor local, use Live Server no VS Code ou um servidor estático simples:
 
 ```bash
 python -m http.server 5500
 ```
 
-Depois, acesse:
+Depois acesse:
 
 ```text
 http://localhost:5500
 ```
 
+## Validação Recomendada
+
+Antes de publicar alterações, vale conferir manualmente:
+
+- menu mobile aberto e fechado
+- navegação por links internos
+- cards e vídeos da página de projetos
+- formulário de contato
+- botão do WhatsApp
+- responsividade em DevTools para mobile, tablet e desktop
+- console do navegador sem erros relevantes
+
 ## SEO e Publicação
 
-O projeto já inclui arquivos e configurações úteis para publicação:
+O projeto já inclui itens básicos para publicação:
 
-- metatags de título e descrição por página
+- `title` e `meta description` por página
+- canonical URLs
+- Open Graph e Twitter Card
 - favicon
 - `robots.txt`
 - `sitemap.xml`
-- assets locais para imagens e vídeos
+- textos alternativos em imagens relevantes
 - estrutura compatível com hospedagem estática
 
-Pode ser publicado em serviços como:
-
-- GitHub Pages
-- Vercel
-- Netlify
-- Cloudflare Pages
+Pode ser publicado em serviços como GitHub Pages, Vercel, Netlify, Cloudflare Pages ou hospedagem estática tradicional.
 
 ## Observação Sobre as Linguagens no GitHub
 
-O GitHub calcula a porcentagem de linguagens principalmente pelo tamanho dos arquivos do repositório. Como este projeto tem uma camada visual forte, é natural que `CSS` apareça com participação maior que `JavaScript`.
+O GitHub calcula a porcentagem de linguagens principalmente pelo tamanho dos arquivos. Como o projeto tem forte camada visual, é esperado que `CSS` apareça com participação maior.
 
-Isso não significa ausência de lógica: as interações principais estão centralizadas em `js/script.js`, usando JavaScript puro e com foco em experiência, acessibilidade e manutenção simples.
+Isso não significa ausência de lógica: as interações principais ficam centralizadas em `js/script.js`, com foco em experiência, acessibilidade e manutenção simples.
 
 ## Objetivo
 
-Este repositório funciona como base pública do portfólio de Luiz Gustavo, reforçando presença profissional, clareza de oferta e geração de contatos comerciais por meio de um site rápido, responsivo e direto ao ponto.
+Este repositório é a base pública do portfólio de Luiz Gustavo. Ele reforça presença profissional, clareza de oferta e geração de contatos comerciais por meio de um site rápido, direto e responsivo.
