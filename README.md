@@ -1,148 +1,203 @@
 # Luiz Gustavo Dev
 
-Portfólio profissional e site institucional de **Luiz Gustavo Dev**, criado com `HTML5`, `CSS3` e `JavaScript` puro.
+Portfólio profissional de **Luiz Gustavo Barbosa Teixeira**, desenvolvedor web e mobile com foco em sites, landing pages, aplicativos Flutter e sistemas web sob medida.
 
-O site funciona como vitrine comercial para apresentar serviços, diferenciais, projetos em destaque e canais de contato. A proposta é entregar uma experiência direta, responsiva e visualmente consistente, sem frameworks, etapa de build ou dependências desnecessárias.
+O site apresenta, de forma direta, os serviços oferecidos, diferenciais de trabalho, projetos em destaque e canais de contato.
 
-## Visão Geral
+Acesse: [luizgustavodev.com](https://luizgustavodev.com/)
 
-Este repositório contém um site estático composto pelas páginas principais:
+---
 
-- `index.html` - apresentação inicial, proposta de valor, tecnologias, projetos e chamada para contato
-- `servicos.html` - serviços oferecidos e estrutura de entrega
-- `skills.html` - diferenciais técnicos, estratégicos e de experiência do usuário
-- `projetos.html` - projetos em destaque com cards, vídeos e links externos
-- `contato.html` - formulário de contato e canais diretos
+## Para recrutadores
 
-O foco do projeto é:
+Este portfólio foi criado para apresentar rapidamente minha atuação como desenvolvedor, com foco em clareza, organização e entrega prática.
 
-- comunicar rapidamente quem sou, o que faço e como entrar em contato
-- apresentar serviços de desenvolvimento web, apps e sistemas com clareza
-- destacar projetos reais, como Vinc, Fauny e De La Flor
-- funcionar bem em desktop, tablet e smartphones
-- manter boa leitura, SEO básico, acessibilidade e navegação simples
+### O que você encontra no site
 
-## Destaques Técnicos
+- **Serviços**: tipos de soluções que desenvolvo, como sites, landing pages, apps Flutter, sistemas web e integrações.
+- **Diferenciais**: forma de trabalho, preocupação com experiência do usuário, responsividade, acessibilidade e manutenção.
+- **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc, Fauny e De La Flor.
+- **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho.
 
-- Estrutura estática com HTML semântico
-- CSS modular por responsabilidade e por página
-- Menu mobile com `aria-expanded`, fechamento por clique externo e tecla `Escape`
-- Layout responsivo validado em larguras de `320px`, `360px`, `390px`, `414px`, `768px` e `980px`
-- Cards de projetos com vídeos locais usando `object-fit: cover`
-- Link externo do projeto De La Flor preservado em nova aba
-- Animações progressivas com `IntersectionObserver`
-- Suporte a `prefers-reduced-motion`
-- Barra de progresso de rolagem em JavaScript
-- Cabeçalho com estado visual conforme rolagem
-- Botão flutuante do WhatsApp ajustado para mobile e tablet
-- Formulário de contato com validação nativa e geração de mensagem via `mailto`
-- SEO básico com metatags, favicon, `robots.txt` e `sitemap.xml`
+### Perfil técnico
 
-## JavaScript
+Tenho experiência com desenvolvimento front-end, mobile e back-end, atuando principalmente com:
 
-O projeto usa **Vanilla JavaScript** em [`js/script.js`](js/script.js), sem bibliotecas externas.
+- HTML5
+- CSS3
+- JavaScript
+- Flutter
+- Dart
+- Node.js
+- Express
+- TypeScript
+- PostgreSQL
+- Prisma
+- Git e GitHub
 
-Principais interações:
+Também trabalho com organização de projetos, melhoria de interfaces, revisão de código, responsividade, SEO básico e evolução de sistemas existentes.
 
-- `initMobileMenu()` gerencia abertura, fechamento, clique externo e `Escape`
-- `initRevealObserver()` controla animações de entrada
-- `initScrollProgress()` atualiza a barra superior de progresso
-- `initHeaderState()` altera o cabeçalho após rolagem
-- `initContactForm()` monta a mensagem de contato a partir do formulário
-- `initHeroParticles()` desenha partículas no `canvas` do hero em telas maiores
-- `initKickerBlink()` aplica o cursor visual no destaque inicial
-- módulos de produto reutilizáveis seguem disponíveis para galeria, preço, quantidade e busca
+---
 
-A escolha por JavaScript puro mantém o projeto leve, auditável e fácil de publicar em hospedagens estáticas.
+## Para clientes e visitantes
 
-## Estrutura do Projeto
+Este site também foi pensado para pessoas e empresas que precisam transformar uma ideia, processo ou presença digital em algo mais claro e funcional.
 
-```text
-.
-|-- css/
-|   |-- contato.css
-|   |-- global.css
-|   |-- index.css
-|   |-- menu.css
-|   |-- produtos.css
-|   |-- projetos.css
-|   |-- servicos.css
-|   |-- skills.css
-|   `-- typography.css
-|-- fonts/
-|-- img/
-|-- js/
-|   `-- script.js
-|-- video/
-|   |-- de-la-flor1.mp4
-|   |-- fauny-video.mp4
-|   `-- vinc-video.mp4
-|-- contato.html
-|-- index.html
-|-- projetos.html
-|-- servicos.html
-|-- skills.html
-|-- robots.txt
-`-- sitemap.xml
-```
+Posso ajudar com:
 
-## Stack
+- criação de site institucional;
+- criação de landing page;
+- melhoria de site existente;
+- desenvolvimento de aplicativo Flutter;
+- criação de sistema web;
+- integração com APIs;
+- organização de fluxos e processos digitais;
+- ajustes de responsividade, acessibilidade e SEO.
 
-- `HTML5`
-- `CSS3`
-- `JavaScript` puro
-- Fontes locais e Google Fonts
-- Imagens e vídeos locais
+O objetivo é sempre construir soluções simples de entender, fáceis de usar e alinhadas com a necessidade real do projeto.
 
-## Como Executar Localmente
+---
 
-Por ser um site estático, é possível abrir `index.html` diretamente no navegador.
+## Projetos em destaque
 
-Para testar com servidor local, use Live Server no VS Code ou um servidor estático simples:
+### Vinc
 
-```bash
-python -m http.server 5500
-```
+Aplicativo jurídico antifraude em desenvolvimento, com foco em verificação segura, auditoria, permissões e backend estruturado.
 
-Depois acesse:
+Tecnologias principais:
+
+- Flutter
+- Node.js
+- TypeScript
+- Prisma
+- PostgreSQL
+
+### Fauny
+
+Aplicativo local-first para tutores acompanharem cuidados, emergências, estoque e histórico de saúde de pets.
+
+Tecnologias principais:
+
+- Flutter
+- Dart
+- armazenamento local
+
+### De La Flor
+
+Loja virtual e presença digital para marca de produtos artesanais, com foco em apresentação de produtos, confiança e jornada de compra.
+
+Tecnologias principais:
+
+- HTML
+- CSS
+- JavaScript
+
+---
+
+## Estrutura do site
 
 ```text
-http://localhost:5500
+portfolio-luiz-gustavo/
+├── index.html
+├── servicos.html
+├── skills.html
+├── projetos.html
+├── contato.html
+├── css/
+│   ├── global.css
+│   ├── menu.css
+│   ├── index.css
+│   ├── servicos.css
+│   ├── skills.css
+│   ├── projetos.css
+│   ├── contato.css
+│   └── typography.css
+├── js/
+│   └── script.js
+├── img/
+├── video/
+├── fonts/
+├── robots.txt
+└── sitemap.xml
 ```
 
-## Validação Recomendada
+---
 
-Antes de publicar alterações, vale conferir manualmente:
+## Páginas principais
 
-- menu mobile aberto e fechado
-- navegação por links internos
-- cards e vídeos da página de projetos
-- formulário de contato
-- botão do WhatsApp
-- responsividade em DevTools para mobile, tablet e desktop
-- console do navegador sem erros relevantes
+- `index.html`: apresentação principal, resumo de serviços e chamada para contato.
+- `servicos.html`: descrição dos serviços oferecidos.
+- `skills.html`: diferenciais, experiência de uso e critérios de qualidade.
+- `projetos.html`: projetos em destaque.
+- `contato.html`: formulário, WhatsApp e informações de contato.
 
-## SEO e Publicação
+---
 
-O projeto já inclui itens básicos para publicação:
+## Recursos implementados
 
-- `title` e `meta description` por página
-- canonical URLs
-- Open Graph e Twitter Card
-- favicon
-- `robots.txt`
-- `sitemap.xml`
-- textos alternativos em imagens relevantes
-- estrutura compatível com hospedagem estática
+O site foi estruturado com atenção a:
 
-Pode ser publicado em serviços como GitHub Pages, Vercel, Netlify, Cloudflare Pages ou hospedagem estática tradicional.
+- HTML semântico;
+- responsividade para desktop, tablet e mobile;
+- navegação mobile com menu acessível;
+- foco visível para navegação por teclado;
+- `skip-link` para ir direto ao conteúdo;
+- suporte a `prefers-reduced-motion`;
+- metatags de SEO;
+- Open Graph;
+- Twitter Card;
+- JSON-LD;
+- `robots.txt`;
+- `sitemap.xml`;
+- versionamento de assets com query string.
 
-## Observação Sobre as Linguagens no GitHub
+---
 
-O GitHub calcula a porcentagem de linguagens principalmente pelo tamanho dos arquivos. Como o projeto tem forte camada visual, é esperado que `CSS` apareça com participação maior.
+## Como rodar localmente
 
-Isso não significa ausência de lógica: as interações principais ficam centralizadas em `js/script.js`, com foco em experiência, acessibilidade e manutenção simples.
+Por ser um site estático, não há etapa de build obrigatória.
 
-## Objetivo
+Você pode abrir o `index.html` diretamente no navegador ou usar uma extensão como **Live Server** no VS Code.
 
-Este repositório é a base pública do portfólio de Luiz Gustavo. Ele reforça presença profissional, clareza de oferta e geração de contatos comerciais por meio de um site rápido, direto e responsivo.
+Exemplo de estrutura local:
+
+```text
+C:\sites\portfolio-luiz-gustavo
+```
+
+Abra a pasta no VS Code e inicie o Live Server a partir do `index.html`.
+
+---
+
+## Publicação
+
+O site pode ser publicado em qualquer hospedagem estática, como:
+
+- Hostinger;
+- GitHub Pages;
+- Netlify;
+- Vercel;
+- hospedagem tradicional com upload por FTP ou gerenciador de arquivos.
+
+Antes de publicar, confira:
+
+- se os caminhos de imagens e vídeos estão corretos;
+- se `robots.txt` aponta para o domínio correto;
+- se `sitemap.xml` está atualizado;
+- se os arquivos CSS e JS estão com a versão de cache mais recente.
+
+---
+
+## Contato
+
+- Site: [luizgustavodev.com](https://luizgustavodev.com/)
+- E-mail: [contato@luizgustavodev.com](mailto:contato@luizgustavodev.com)
+- WhatsApp: disponível pelo botão de contato no site
+
+---
+
+## Licença
+
+Este projeto representa o portfólio pessoal e profissional de Luiz Gustavo Barbosa Teixeira.
+
+O código pode ser usado como referência de estrutura, organização e apresentação, mas textos, identidade visual, imagens, vídeos e dados pessoais não devem ser reutilizados sem autorização.

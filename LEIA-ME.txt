@@ -1,16 +1,9 @@
-# Correção de responsividade mobile e menu toggle
+# README atualizado
 
-Substitua os arquivos deste pacote na raiz do projeto.
+Descompacte este pacote na raiz do projeto para substituir/adicionar o arquivo README.md.
 
-Correções aplicadas:
-- Corrigido overflow horizontal no carregamento inicial da home em dispositivos móveis.
-- Reforçado controle de largura em html, body, main, header, containers, grids, cards, imagens e vídeos.
-- Ajustada a home para evitar elementos decorativos passando da largura da tela.
-- Menu mobile refeito com lógica mais simples e robusta.
-- Menu toggle agora abre/fecha com click e touch.
-- Nav mobile usa position: fixed, largura controlada por 100vw e aria-hidden consistente.
-- Header e pseudo-elementos não bloqueiam clique/toque no botão do menu.
-- HTMLs atualizados para carregar assets com ?v=20260703-8.
+Arquivo incluído:
+- README.md
 
 Commit sugerido:
-git commit -m "fix: corrige responsividade mobile e menu toggle"
+git commit -m "docs: atualiza README para recrutadores e usuários"
