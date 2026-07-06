@@ -5,8 +5,9 @@
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 100%;
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -114,7 +115,7 @@
 /* ── Card body ──────────────────────────────────────────── */
 
 .project-body {
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -223,7 +224,7 @@
   }
 
   .project-visual--branded {
-    height: clamp(220px, 58vw, 320px);
+    height: clamp(190px, 54vw, 280px);
   }
 }
 
@@ -239,7 +240,7 @@
 .project-visual--branded {
   display: block;
   width: 100%;
-  height: clamp(250px, 24vw, 330px);
+  height: clamp(190px, 18vw, 260px);
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -251,7 +252,7 @@
 .project-visual--symbol {
   display: grid;
   place-items: center;
-  min-height: clamp(250px, 24vw, 330px);
+  min-height: clamp(190px, 18vw, 260px);
   background:
     radial-gradient(circle at 78% 18%, rgba(115, 184, 191, 0.30), transparent 34%),
     linear-gradient(135deg, rgba(53, 75, 140, 0.96), rgba(31, 42, 79, 0.90));
@@ -332,6 +333,18 @@
 
 .project-visual--delaflor .project-video {
   pointer-events: none;
+}
+
+.project-visual--symbol .project-video {
+  inset: 50% auto auto 50%;
+  width: auto;
+  height: 88%;
+  max-width: min(56%, 220px);
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(13, 13, 13, 0.38);
+  box-shadow: 0 18px 38px rgba(13, 13, 13, 0.28);
+  transform: translate(-50%, -50%);
 }
 
 /* Logo centralizada */
@@ -495,11 +508,11 @@
 
 @media (min-width: 1600px) {
   .project-grid {
-    gap: 22px;
+    gap: 18px;
   }
 
   .project-card .project-body {
-    padding: 26px 24px 28px;
+    padding: 22px 20px 24px;
   }
 }
 
@@ -581,6 +594,10 @@
   transform: scale(1.03);
 }
 
+.project-card:hover .project-visual--symbol .project-video {
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
 @media (min-width: 981px) {
   .project-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -614,5 +631,12 @@
   .project-visual--branded:hover .project-visual-bg,
   .project-card:hover .project-video {
     transform: none;
+  }
+
+  .project-visual--symbol .project-video,
+  .project-card:hover .project-visual--symbol .project-video {
+    height: 90%;
+    max-width: min(62%, 230px);
+    transform: translate(-50%, -50%);
   }
 }
