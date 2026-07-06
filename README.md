@@ -2,7 +2,7 @@
 
 Portfólio profissional de **Luiz Gustavo Barbosa Teixeira**, desenvolvedor web e mobile com foco em sites, landing pages, aplicativos Flutter e sistemas web sob medida.
 
-O site apresenta, de forma direta, os serviços oferecidos, diferenciais de trabalho, projetos em destaque e canais de contato.
+O site apresenta, de forma direta, os serviços oferecidos, projetos em destaque e canais de contato.
 
 Acesse: [luizgustavodev.com](https://luizgustavodev.com/)
 
@@ -15,7 +15,6 @@ Este portfólio foi criado para apresentar rapidamente minha atuação como dese
 ### O que você encontra no site
 
 - **Serviços**: tipos de soluções que desenvolvo, como sites, landing pages, apps Flutter, sistemas web e integrações.
-- **Diferenciais**: forma de trabalho, preocupação com experiência do usuário, responsividade, acessibilidade e manutenção.
 - **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc, Fauny e De La Flor.
 - **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho.
 
@@ -100,7 +99,6 @@ Tecnologias principais:
 portfolio-luiz-gustavo/
 ├── index.html
 ├── servicos.html
-├── skills.html
 ├── projetos.html
 ├── contato.html
 ├── css/
@@ -108,7 +106,6 @@ portfolio-luiz-gustavo/
 │   ├── menu.css
 │   ├── index.css
 │   ├── servicos.css
-│   ├── skills.css
 │   ├── projetos.css
 │   ├── contato.css
 │   └── typography.css
@@ -127,7 +124,6 @@ portfolio-luiz-gustavo/
 
 - `index.html`: apresentação principal, resumo de serviços e chamada para contato.
 - `servicos.html`: descrição dos serviços oferecidos.
-- `skills.html`: diferenciais, experiência de uso e critérios de qualidade.
 - `projetos.html`: projetos em destaque.
 - `contato.html`: formulário, WhatsApp e informações de contato.
 
