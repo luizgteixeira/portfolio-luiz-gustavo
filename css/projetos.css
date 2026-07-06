@@ -186,6 +186,16 @@
   box-shadow: 0 0 0 4px rgba(242, 178, 121, 0.18);
 }
 
+.project-status--ready::before {
+  background: #2f8f5b;
+  box-shadow: 0 0 0 4px rgba(47, 143, 91, 0.18);
+}
+
+.project-status--development::before {
+  background: #d18a2f;
+  box-shadow: 0 0 0 4px rgba(209, 138, 47, 0.20);
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
