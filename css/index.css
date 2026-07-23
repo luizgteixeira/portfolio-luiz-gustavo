@@ -1648,7 +1648,8 @@
 }
 
 .preview-card--fauny img,
-.preview-card--delaflor img {
+.preview-card--delaflor img,
+.preview-card--zonea img {
   object-fit: contain;
   padding: 18px;
   background:
