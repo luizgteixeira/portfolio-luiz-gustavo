@@ -116,7 +116,7 @@
 }
 
 .brand-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-display);
   font-size: .92rem;
   font-weight: 600;
   color: var(--cream);

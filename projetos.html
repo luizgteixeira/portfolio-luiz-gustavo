@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600;700&display=swap">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luiz Gustavo Dev">
@@ -35,10 +35,10 @@
   <meta name="twitter:image" content="https://luizgustavodev.com/img/luiz-home.png">
   <meta name="twitter:image:alt" content="Luiz Gustavo, desenvolvedor full-stack">
   <link rel="icon" type="image/png" sizes="256x256" href="img/favicon.png">
-  <link rel="stylesheet" href="css/global.css?v=20260703-8">
-  <link rel="stylesheet" href="css/menu.css?v=20260703-8">
-  <link rel="stylesheet" href="css/projetos.css?v=20260703-8">
-  <link rel="stylesheet" href="css/typography.css?v=20260703-8">
+  <link rel="stylesheet" href="css/global.css?v=20260723-1">
+  <link rel="stylesheet" href="css/menu.css?v=20260723-1">
+  <link rel="stylesheet" href="css/projetos.css?v=20260723-1">
+  <link rel="stylesheet" href="css/typography.css?v=20260723-1">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -49,6 +49,7 @@
           "name": "Luiz Gustavo Dev",
           "url": "https://luizgustavodev.com/",
           "image": "https://luizgustavodev.com/img/luiz-home.png",
+          "logo": "https://luizgustavodev.com/img/favicon.png",
           "description": "Criação de sites, landing pages, apps Flutter e sistemas web para apresentar melhor sua empresa, captar contatos e organizar processos.",
           "email": "mailto:contato@luizgustavodev.com",
           "telephone": "+55 31 99260-9970",
@@ -58,7 +59,21 @@
             "addressRegion": "MG",
             "addressCountry": "BR"
           },
-          "areaServed": "BR"
+          "areaServed": "BR",
+          "founder": {
+            "@id": "https://luizgustavodev.com/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://luizgustavodev.com/#person",
+          "name": "Luiz Gustavo Barbosa Teixeira",
+          "jobTitle": "Desenvolvedor Full-Stack e Mobile",
+          "url": "https://luizgustavodev.com/",
+          "image": "https://luizgustavodev.com/img/luiz-home.png",
+          "worksFor": {
+            "@id": "https://luizgustavodev.com/#business"
+          }
         },
         {
           "@type": "WebSite",
@@ -71,6 +86,14 @@
           "inLanguage": "pt-BR"
         },
         {
+          "@type": "BreadcrumbList",
+          "@id": "https://luizgustavodev.com/projetos.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://luizgustavodev.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://luizgustavodev.com/projetos.html" }
+          ]
+        },
+        {
           "@type": "CollectionPage",
           "@id": "https://luizgustavodev.com/projetos.html#webpage",
           "url": "https://luizgustavodev.com/projetos.html",
@@ -81,6 +104,9 @@
           },
           "about": {
             "@id": "https://luizgustavodev.com/#business"
+          },
+          "breadcrumb": {
+            "@id": "https://luizgustavodev.com/projetos.html#breadcrumb"
           },
           "inLanguage": "pt-BR"
         }
@@ -133,6 +159,14 @@
   </header>
 
   <main id="main-content" tabindex="-1">
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Início</a></li>
+          <li aria-current="page">Projetos</li>
+        </ol>
+      </div>
+    </nav>
     <section class="section">
       <div class="container">
 
@@ -148,8 +182,8 @@
 
           <article class="card project-card project-card--featured reveal reveal-delay-1">
             <div class="project-visual project-visual--symbol project-visual--video project-visual--vinc" aria-hidden="true">
-              <video class="project-video" tabindex="-1" src="video/vinc-video.mp4" muted loop autoplay playsinline
-                preload="metadata" poster="img/vinc.png" aria-hidden="true"></video>
+              <video class="project-video" tabindex="-1" src="video/vinc-video.mp4" muted loop playsinline
+                preload="none" poster="img/vinc.png" aria-hidden="true"></video>
             </div>
             <div class="project-body">
               <div class="project-meta">
@@ -168,8 +202,8 @@
 
           <article class="card project-card reveal reveal-delay-2">
             <div class="project-visual project-visual--symbol project-visual--video project-visual--fauny" aria-hidden="true">
-              <video class="project-video" tabindex="-1" src="video/fauny-video.mp4" muted loop autoplay playsinline
-                preload="metadata" poster="img/fauny.png" aria-hidden="true"></video>
+              <video class="project-video" tabindex="-1" src="video/fauny-video.mp4" muted loop playsinline
+                preload="none" poster="img/fauny.png" aria-hidden="true"></video>
             </div>
             <div class="project-body">
               <div class="project-meta">
@@ -191,8 +225,8 @@
               class="project-visual project-visual--branded project-visual--video project-visual--delaflor"
               aria-label="Abrir o site De La Flor em nova aba">
               <div class="project-visual-bg"></div>
-              <video class="project-video" tabindex="-1" src="video/de-la-flor1.mp4?v=20260417-1307" muted loop autoplay playsinline
-                preload="metadata" poster="img/de-la-flor2.png" aria-hidden="true"></video>
+              <video class="project-video" tabindex="-1" src="video/de-la-flor1.mp4?v=20260417-1307" muted loop playsinline
+                preload="none" poster="img/de-la-flor2.png" aria-hidden="true"></video>
               <div class="project-visual-overlay">
                 <span class="project-visual-cta">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -292,11 +326,11 @@
     </div>
   </footer>
 
-  <script src="js/script.js?v=20260703-8" defer></script>
+  <script src="js/script.js?v=20260723-1" defer></script>
   <a href="https://wa.me/5531992609970?text=Ol%C3%A1%2C%20Luiz!%20Vi%20seus%20projetos%20e%20quero%20algo%20parecido%20para%20o%20meu%20neg%C3%B3cio."
     class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Luiz Gustavo no WhatsApp"
-    data-tooltip="Vamos conversar sobre sua ideia?"><img src="img/whatsapp.png" alt="WhatsApp" width="512" height="512"
-      loading="lazy" decoding="async"></a>
+    data-tooltip="Vamos conversar sobre sua ideia?"><img src="img/whatsapp.png" alt="" width="512" height="512"
+      loading="lazy" decoding="async" aria-hidden="true"></a>
 </body>
 
 </html>
