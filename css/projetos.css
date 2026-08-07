@@ -472,6 +472,16 @@
   background: var(--border-hi);
 }
 
+/* ── Zonea card: vídeo maior e sem corte, para legibilidade ── */
+
+.project-card--zonea {
+  grid-column: span 2;
+}
+
+.project-visual--zonea .project-video {
+  object-fit: contain;
+}
+
 /* ── De La Flor card ────────────────────────────────────── */
 
 .project-visual--delaflor .project-visual-bg {
@@ -629,7 +639,8 @@
     grid-template-columns: 1fr;
   }
 
-  .project-card--featured {
+  .project-card--featured,
+  .project-card--zonea {
     grid-column: auto;
   }
 
