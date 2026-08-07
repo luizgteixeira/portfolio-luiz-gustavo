@@ -743,6 +743,10 @@ main {
   transition-delay: 0.46s;
 }
 
+.reveal-delay-5 {
+  transition-delay: 0.58s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
