@@ -52,6 +52,19 @@
   color: var(--gold-light);
 }
 
+.form-status.success {
+  color: #6fbf8b;
+}
+
+.form-status.error {
+  color: #e08a7d;
+}
+
+.form-status.error a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .field {
   display: grid;
   gap: 7px;

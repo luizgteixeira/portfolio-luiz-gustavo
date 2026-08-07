@@ -160,46 +160,67 @@ function initContactForm() {
 
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const status = document.getElementById('formStatus');
-  const recipient =
-    contactForm.getAttribute('data-recipient') ||
-    contactForm.getAttribute('action')?.replace(/^mailto:/i, '') ||
-    'contato@luizgustavodev.com';
+  if (!submitButton || !status) return;
 
-  contactForm.addEventListener('submit', (event) => {
+  let statusClearTimer = null;
+  const clearStatusLater = (delay) => {
+    window.clearTimeout(statusClearTimer);
+    statusClearTimer = window.setTimeout(() => {
+      status.textContent = '';
+      status.className = 'form-status';
+    }, delay);
+  };
+
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    if (!contactForm.reportValidity() || !submitButton) return;
+    if (!contactForm.reportValidity()) return;
 
-    const formData = new FormData(contactForm);
-    const nome = String(formData.get('nome') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const assunto = String(formData.get('assunto') || '').trim();
-    const mensagem = String(formData.get('mensagem') || '').trim();
+    // Honeypot: se o campo estiver preenchido, é um bot. Ignora silenciosamente.
+    if (contactForm.botcheck && contactForm.botcheck.checked) return;
 
-    const mailto =
-      `mailto:${recipient}` +
-      '?subject=' +
-      encodeURIComponent(`[Site] ${assunto}`) +
-      '&body=' +
-      encodeURIComponent(
-        `Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${mensagem}`
-      );
+    window.clearTimeout(statusClearTimer);
+
+    const assunto = String(new FormData(contactForm).get('assunto') || '').trim();
+    const subjectField = contactForm.querySelector('#formSubjectField');
+    if (subjectField && assunto) {
+      subjectField.value = `[Site] ${assunto}`;
+    }
 
     const originalLabel = submitButton.textContent;
     submitButton.disabled = true;
-    submitButton.textContent = 'Abrindo e-mail...';
+    submitButton.textContent = 'Enviando...';
+    status.textContent = 'Enviando sua mensagem...';
+    status.className = 'form-status';
 
-    if (status) {
-      status.textContent =
-        'Abrindo seu aplicativo de e-mail com a mensagem preenchida.';
-    }
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
+      });
 
-    window.location.href = mailto;
+      const result = await response.json();
 
-    window.setTimeout(() => {
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Falha no envio.');
+      }
+
+      status.textContent = 'Mensagem enviada com sucesso! Vou responder em breve.';
+      status.className = 'form-status success';
+      contactForm.reset();
+      clearStatusLater(6000);
+    } catch (error) {
+      status.innerHTML =
+        'Não foi possível enviar agora. Tente novamente em instantes ou <a href="mailto:contato@luizgustavodev.com">escreva direto para contato@luizgustavodev.com</a>.';
+      status.className = 'form-status error';
+    } finally {
       submitButton.disabled = false;
       submitButton.textContent = originalLabel;
-    }, 1800);
+    }
   });
 }
 
