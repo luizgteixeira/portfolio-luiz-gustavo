@@ -14,7 +14,6 @@ Este portfólio foi criado para apresentar rapidamente minha atuação como dese
 
 ### O que você encontra no site
 
-- **Serviços**: tipos de soluções que desenvolvo, como sites, landing pages, apps Flutter, sistemas web e integrações.
 - **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc, Fauny e De La Flor.
 - **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho.
 
@@ -98,14 +97,12 @@ Tecnologias principais:
 ```text
 portfolio-luiz-gustavo/
 ├── index.html
-├── servicos.html
 ├── projetos.html
 ├── contato.html
 ├── css/
 │   ├── global.css
 │   ├── menu.css
 │   ├── index.css
-│   ├── servicos.css
 │   ├── projetos.css
 │   ├── contato.css
 │   └── typography.css
@@ -122,8 +119,7 @@ portfolio-luiz-gustavo/
 
 ## Páginas principais
 
-- `index.html`: apresentação principal, resumo de serviços e chamada para contato.
-- `servicos.html`: descrição dos serviços oferecidos.
+- `index.html`: apresentação principal, resumo de serviços, processo de trabalho e chamada para contato.
 - `projetos.html`: projetos em destaque.
 - `contato.html`: formulário, WhatsApp e informações de contato.
 
