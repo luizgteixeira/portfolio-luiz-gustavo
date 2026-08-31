@@ -510,6 +510,18 @@
   transform: scale(1.06);
 }
 
+/* ── Sigiloteca card — cores da marca (ink + oxblood) ──── */
+
+.project-visual--sigiloteca .project-visual-bg {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122, 35, 51, 0.24) 0%, transparent 65%),
+    linear-gradient(160deg, #262b3d 0%, #1e2230 60%, #171a26 100%);
+}
+
+.project-visual--sigiloteca:hover .project-visual-bg {
+  transform: scale(1.06);
+}
+
 @media (max-width: 420px) {
   .project-body {
     padding: 20px;

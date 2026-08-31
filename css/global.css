@@ -9,21 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  border: 1px solid var(--border-hi);
-  background: linear-gradient(135deg, rgba(242,178,121,.20), rgba(242,221,213,.06));
-  box-shadow: 0 0 20px rgba(242,178,121,.12), inset 0 1px 0 rgba(255,255,255,.08);
   flex-shrink: 0;
-  transition: box-shadow var(--transition-fast);
 }
-.brand-svg-wrap svg { display: block; }
 .brand-svg-wrap img {
-  width: 34px;
-  height: 34px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-}
-.brand:hover .brand-svg-wrap {
-  box-shadow: 0 0 28px rgba(242,178,121,.24), inset 0 1px 0 rgba(255,255,255,.10);
 }
 
 *,
@@ -1341,11 +1332,6 @@ body::before {
       transparent 100%);
 }
 
-.brand-svg-wrap {
-  background: linear-gradient(135deg, rgba(53, 75, 140, 0.12), rgba(115, 184, 191, 0.18));
-  box-shadow: 0 0 20px rgba(53, 75, 140, 0.10), inset 0 1px 0 rgba(255,255,255,.24);
-}
-
 .card,
 .glass-card {
   background: rgba(242, 224, 189, 0.72);
@@ -1397,26 +1383,6 @@ body::before {
 .whatsapp-float::after {
   background: rgba(53, 75, 140, 0.94);
   color: #F2E0BD;
-}
-
-.brand-svg-wrap svg circle:first-of-type,
-.footer-brand-link > svg circle:first-of-type {
-  stroke: var(--blue);
-}
-
-.brand-svg-wrap svg circle:nth-of-type(2),
-.footer-brand-link > svg circle:nth-of-type(2) {
-  stroke: rgba(115, 184, 191, 0.55);
-}
-
-.brand-svg-wrap svg text,
-.footer-brand-link > svg text {
-  fill: var(--blue);
-}
-
-.brand-svg-wrap svg circle:nth-of-type(n+3),
-.footer-brand-link > svg circle:nth-of-type(n+3) {
-  fill: var(--yellow);
 }
 
 input,

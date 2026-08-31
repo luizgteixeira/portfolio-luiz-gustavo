@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" width="400" height="340" role="img" aria-label="Luiz Gustavo, dev web e mobile">
+  <title>Luiz Gustavo — Dev Web &amp; Mobile</title>
+  <rect x="115" y="30" width="170" height="170" rx="34" fill="#1E2530"/>
+  <text x="200" y="135" text-anchor="middle" font-family="'JetBrains Mono','Courier New',monospace" font-weight="800" font-size="86" fill="#FFFFFF" style="font-variant-ligatures:none">&lt;<tspan dx="1">&gt;</tspan></text>
+  <rect x="182" y="164" width="36" height="10" rx="5" fill="#DB8A2E"/>
+  <text x="200" y="250" text-anchor="middle" font-family="'JetBrains Mono','Courier New',monospace" font-weight="800" font-size="44" fill="#1E2530">LUIZ GUSTAVO</text>
+  <line x1="100" y1="268" x2="300" y2="268" stroke="#1E2530" stroke-width="1.5" opacity="0.35"/>
+  <text x="200" y="298" text-anchor="middle" font-family="'JetBrains Mono','Courier New',monospace" font-weight="700" font-size="22" fill="#DB8A2E" letter-spacing="3">DEV WEB &amp; MOBILE</text>
+</svg>

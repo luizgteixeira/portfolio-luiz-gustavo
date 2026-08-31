@@ -1614,9 +1614,9 @@
   background: rgba(255, 255, 255, 0.40);
 }
 
-.preview-card--fauny img,
-.preview-card--delaflor img,
-.preview-card--zonea img {
+.preview-card--sigiloteca img,
+.preview-card--kasarao img,
+.preview-card--delaflor img {
   object-fit: contain;
   padding: 18px;
   background:
