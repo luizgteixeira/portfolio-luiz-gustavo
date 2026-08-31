@@ -276,12 +276,6 @@
   line-height: 1;
 }
 
-.project-visual--fauny {
-  background:
-    radial-gradient(circle at 20% 22%, rgba(242, 199, 68, 0.32), transparent 34%),
-    linear-gradient(135deg, rgba(31, 42, 79, 0.94), rgba(115, 184, 191, 0.78));
-}
-
 /* Fundo escuro com textura de gradiente quente — gastrobar vibes */
 .project-visual-bg {
   position: absolute;

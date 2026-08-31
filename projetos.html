@@ -35,6 +35,7 @@
   <meta name="twitter:image" content="https://luizgustavodev.com/img/luiz-home.png">
   <meta name="twitter:image:alt" content="Luiz Gustavo, desenvolvedor full-stack">
   <link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="css/global.css?v=20260723-1">
   <link rel="stylesheet" href="css/menu.css?v=20260723-1">
   <link rel="stylesheet" href="css/projetos.css?v=20260723-1">
@@ -50,7 +51,7 @@
           "url": "https://luizgustavodev.com/",
           "image": "https://luizgustavodev.com/img/luiz-home.png",
           "logo": "https://luizgustavodev.com/img/favicon.png",
-          "description": "Criação de sites, landing pages, apps mobile e sistemas web para apresentar melhor sua empresa, captar contatos e organizar processos.",
+          "description": "Criação de sites, landing pages e apps mobile para apresentar melhor sua empresa, captar contatos e organizar processos.",
           "email": "mailto:contato@luizgustavodev.com",
           "telephone": "+55 31 99260-9970",
           "address": {
@@ -60,6 +61,12 @@
             "addressCountry": "BR"
           },
           "areaServed": "BR",
+          "makesOffer": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sites e landing pages" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicativos mobile" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Painéis e integrações" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manutenção e evolução" } }
+          ],
           "founder": {
             "@id": "https://luizgustavodev.com/#person"
           }
@@ -124,7 +131,7 @@
         <a href="index.html" class="brand" aria-label="Página inicial Luiz Gustavo Dev">
           <span class="brand-svg-wrap"><img src="img/logo-novo-1.svg" alt="" aria-hidden="true" width="44" height="44" decoding="async"></span>
           <span class="brand-text">
-            <span class="brand-title">luizgustavodev</span>
+            <span class="brand-title">luizgustavo<span class="accent-dev">dev</span></span>
             <span class="brand-subtitle">Desenvolvedor Full-Stack e Mobile</span>
           </span>
         </a>
@@ -281,24 +288,11 @@
               rel="noopener noreferrer" aria-label="Abrir o Sigiloteca em nova aba"></a>
           </article>
 
-          <article class="card project-card project-card--kasarao reveal reveal-delay-5">
-            <a href="https://kasaraogastrobar.com/" target="_blank" rel="noopener noreferrer"
-              class="project-visual project-visual--branded project-visual--video project-visual--kasarao"
-              aria-label="Abrir o site do Kasarão Gastrobar em nova aba">
-              <div class="project-visual-bg"></div>
+          <article class="card project-card project-card--kasarao reveal reveal-delay-4">
+            <div class="project-visual project-visual--video project-visual--kasarao" aria-hidden="true">
               <video class="project-video" tabindex="-1" src="video/kasarao.mp4" muted loop playsinline
                 preload="none" poster="img/kasarao.png" aria-hidden="true"></video>
-              <div class="project-visual-overlay">
-                <span class="project-visual-cta">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  Acessar site
-                </span>
-              </div>
-            </a>
+            </div>
             <div class="project-body">
               <div class="project-meta">
                 <span class="project-type">Site Institucional — Restaurante</span>
@@ -306,32 +300,10 @@
               </div>
               <h3>Kasarão Gastrobar</h3>
               <p>Site institucional com hero em vídeo, galeria, depoimentos reais de clientes e SEO local, criado para aumentar reservas, contatos e pedidos do restaurante.</p>
-              <span class="project-status project-status--ready">Site pronto para acessar</span>
+              <span class="project-status project-status--development">Em aprovação do cliente</span>
               <div class="project-tags">
                 <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span>
                 <span class="badge">SEO Local</span><span class="badge">Depoimentos</span>
-              </div>
-            </div>
-            <a class="project-card-link" href="https://kasaraogastrobar.com/" target="_blank"
-              rel="noopener noreferrer" aria-label="Abrir o site do Kasarão Gastrobar em nova aba"></a>
-          </article>
-
-          <article class="card project-card reveal reveal-delay-4">
-            <div class="project-visual project-visual--symbol project-visual--video project-visual--fauny" aria-hidden="true">
-              <video class="project-video" tabindex="-1" src="video/fauny-video.mp4?v=20260807-1" muted loop playsinline
-                preload="none" poster="img/fauny.png" aria-hidden="true"></video>
-            </div>
-            <div class="project-body">
-              <div class="project-meta">
-                <span class="project-type">App para pets</span>
-                <span class="project-pages">Flutter + Node.js</span>
-              </div>
-              <h3>Fauny</h3>
-              <p>Organiza informações, rotinas e cuidados pet em uma experiência simples para tutores acompanharem o que importa.</p>
-              <span class="project-status project-status--development">Em desenvolvimento ativo</span>
-              <div class="project-tags">
-                <span class="badge">Web app</span><span class="badge">UX</span><span class="badge">APIs</span>
-                <span class="badge">Responsivo</span>
               </div>
             </div>
           </article>
@@ -361,7 +333,7 @@
           <p>Seu projeto também pode começar assim: problema bem definido, interface clara e tecnologia sem excesso.</p>
           <div class="conversion-actions">
             <a href="https://wa.me/5531992609970?text=Ol%C3%A1%2C%20Luiz!%20Vi%20seus%20projetos%20e%20quero%20algo%20parecido%20para%20o%20meu%20neg%C3%B3cio."
-              class="btn btn-primary" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">Chamar no WhatsApp agora</a>
             <a href="contato.html" class="btn btn-secondary">Orçamento pelo formulário</a>
           </div>
         </div>
@@ -380,12 +352,12 @@
             </a>
             <div class="footer-brand-info">
               <span class="footer-name">luizgustavo<span class="footer-name-accent">dev</span></span>
-              <span class="footer-role">Full-Stack Developer · BH</span>
+              <span class="footer-role">Desenvolvedor Full-Stack e Mobile</span>
             </div>
           </div>
 
           <p class="footer-atendimento">
-            <strong>Atendimento:</strong> Sites, landing pages, apps e sistemas web sob demanda.
+            <strong>Atendimento:</strong> Sites, landing pages e apps sob demanda.
           </p>
 
           <div class="footer-socials">
@@ -419,7 +391,7 @@
   <script src="js/script.js?v=20260723-1" defer></script>
   <a href="https://wa.me/5531992609970?text=Ol%C3%A1%2C%20Luiz!%20Vi%20seus%20projetos%20e%20quero%20algo%20parecido%20para%20o%20meu%20neg%C3%B3cio."
     class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Luiz Gustavo no WhatsApp"
-    data-tooltip="Vamos conversar sobre sua ideia?"><img src="img/whatsapp.png" alt="" width="512" height="512"
+    data-tooltip="Fale comigo agora"><img src="img/whatsapp.png" alt="" width="512" height="512"
       loading="lazy" decoding="async" aria-hidden="true"></a>
 </body>
 

@@ -14,7 +14,7 @@ Este portfólio foi criado para apresentar rapidamente minha atuação como dese
 
 ### O que você encontra no site
 
-- **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc, Fauny e De La Flor.
+- **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc e De La Flor.
 - **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho.
 
 ### Perfil técnico
@@ -69,16 +69,6 @@ Tecnologias principais:
 - TypeScript
 - Prisma
 - PostgreSQL
-
-### Fauny
-
-Aplicativo local-first para tutores acompanharem cuidados, emergências, estoque e histórico de saúde de pets.
-
-Tecnologias principais:
-
-- Flutter
-- Dart
-- armazenamento local
 
 ### De La Flor
 
