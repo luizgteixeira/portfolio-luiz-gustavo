@@ -215,6 +215,21 @@
   font-weight: 700;
 }
 
+/* ── About section ──────────────────────────────────────── */
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 72ch;
+}
+
+.about-body p {
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
 /* ── Photo panel ────────────────────────────────────────── */
 
 .hero-panel {
