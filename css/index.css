@@ -230,6 +230,115 @@
   color: var(--text-secondary);
 }
 
+/* ── Testimonial ────────────────────────────────────────── */
+
+.section-head--center {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-head--center .section-kicker {
+  justify-content: center;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 980px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.testimonial-card {
+  position: relative;
+  padding: 40px 36px 32px;
+  background: rgba(242, 221, 213, 0.72);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.testimonial-mark {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.6rem;
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: -10px;
+}
+
+.testimonial-quote p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.16rem;
+  line-height: 1.52;
+  color: var(--cream);
+}
+
+.testimonial-quote p a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.testimonial-quote p a:hover {
+  color: var(--gold-ink);
+}
+
+@media (max-width: 780px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.testimonial-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: var(--cream);
+}
+
+.testimonial-role {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.testimonial-role a {
+  color: var(--gold-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .testimonial-card {
+    padding: 40px 24px 32px;
+  }
+
+  .testimonial-mark {
+    font-size: 3.6rem;
+  }
+
+  .testimonial-quote p {
+    font-size: 1.24rem;
+  }
+}
+
 /* ── Photo panel ────────────────────────────────────────── */
 
 .hero-panel {
@@ -1260,8 +1369,7 @@
   background: rgba(13, 13, 13, 0.58);
 }
 
-.feature-num,
-.process-step {
+.feature-num {
   color: rgba(242, 221, 213, 0.14);
 }
 
@@ -1560,7 +1668,7 @@
 }
 
 .preview-card--sigiloteca img,
-.preview-card--kasarao img,
+.preview-card--zonea img,
 .preview-card--delaflor img {
   object-fit: contain;
   padding: 18px;
@@ -1856,165 +1964,3 @@
   }
 }
 
-/* ── Process (migrado de servicos.html) ──────────────────── */
-
-.process-section {
-  padding-top: 0;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.process-card {
-  padding: 32px 24px;
-  background: var(--surface);
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  position: relative;
-  overflow: hidden;
-  transition: background var(--transition-med);
-  cursor: default;
-}
-
-.process-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, transparent, var(--gold), transparent);
-  transform: scaleY(0);
-  transform-origin: center;
-  transition: transform 0.40s var(--ease-out);
-}
-
-.process-card::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: -20px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(242, 178, 121, 0.08), transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition-med);
-  pointer-events: none;
-}
-
-.process-card:hover {
-  background: var(--surface-hi);
-}
-
-.process-card:hover::before {
-  transform: scaleY(1);
-}
-
-.process-card:hover::after {
-  opacity: 1;
-}
-
-.process-step {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.9rem;
-  font-weight: 300;
-  color: rgba(242, 221, 213, 0.16);
-  line-height: 1;
-  margin-bottom: 10px;
-  letter-spacing: 0;
-  transition: color var(--transition-med);
-}
-
-.process-card:hover .process-step {
-  color: rgba(242, 178, 121, 0.26);
-}
-
-.process-card strong {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.10rem;
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-bottom: 8px;
-}
-
-.process-card span {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.68;
-}
-
-@media (max-width: 980px) {
-  .process-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process-card {
-    padding: 26px 20px;
-  }
-}
-
-.process-card {
-  background: var(--surface);
-}
-
-.process-card::after {
-  background: radial-gradient(circle, rgba(242, 178, 121, 0.08), transparent 70%);
-}
-
-.process-step {
-  color: rgba(242, 221, 213, 0.16);
-}
-
-.process-card:hover .process-step {
-  color: rgba(242, 178, 121, 0.30);
-}
-
-.process-card {
-  background: rgba(242, 221, 213, 0.70);
-}
-
-.process-grid {
-  background: rgba(13, 13, 13, 0.12);
-  border-color: rgba(13, 13, 13, 0.12);
-}
-
-.process-card::after {
-  display: none;
-}
-
-@media (max-width: 1180px) {
-  .process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process-card {
-    padding: 24px 20px;
-  }
-
-  .process-step {
-    font-size: 2.3rem;
-  }
-}

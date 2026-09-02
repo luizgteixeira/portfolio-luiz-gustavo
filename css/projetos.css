@@ -516,6 +516,18 @@
   transform: scale(1.06);
 }
 
+/* ── Zonea card — tons de mapa (azul/tinta da marca do site) ── */
+
+.project-visual--zonea .project-visual-bg {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(115, 184, 191, 0.22) 0%, transparent 65%),
+    linear-gradient(160deg, #1F2A4F 0%, #354B8C 60%, #1F2A4F 100%);
+}
+
+.project-visual--zonea:hover .project-visual-bg {
+  transform: scale(1.06);
+}
+
 @media (max-width: 420px) {
   .project-body {
     padding: 20px;
