@@ -1,5 +1,5 @@
 /* =========================================================
-   PROJETOS.CSS — layout limpo e responsivo
+   PROJETOS.CSS — grid de projetos
    ========================================================= */
 
 .project-grid {
@@ -16,10 +16,7 @@
   flex-direction: column;
   min-width: 0;
   max-width: 100%;
-  transition:
-    transform var(--transition-med),
-    border-color var(--transition-med),
-    box-shadow var(--transition-med);
+  transition: border-color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-med);
 }
 
 .project-card-link {
@@ -30,232 +27,38 @@
 }
 
 .project-card-link:focus-visible {
-  outline: 3px solid var(--yellow);
-  outline-offset: 4px;
+  outline: 2.5px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-hi);
-  box-shadow: var(--shadow-lg), var(--shadow-gold-strong);
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
 }
 
-/* ── Visual placeholder with animated grid pattern ─────── */
+/* ── Área visual ────────────────────────────────────────── */
+
 .project-visual {
   aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  border-bottom: 1px solid var(--border);
-  background: var(--ink-mid);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
 }
-
-/* Animated grid lines */
-.project-visual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(242, 221, 213, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(242, 221, 213, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
-  animation: grid-drift 12s linear infinite;
-}
-
-@keyframes grid-drift {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 32px 32px, 32px 32px;
-  }
-}
-
-/* Hover reveal shimmer */
-.project-visual::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg,
-      transparent 25%,
-      rgba(242, 178, 121, 0.10) 50%,
-      transparent 75%);
-  background-size: 250% 100%;
-  background-position: 250% 0;
-  transition: background-position 0.8s var(--ease-out);
-}
-
-.project-card:hover .project-visual::after {
-  background-position: -250% 0;
-}
-
-.project-visual-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.60rem;
-  letter-spacing: 0.30em;
-  text-transform: uppercase;
-  color: rgba(242, 221, 213, 0.24);
-  white-space: nowrap;
-  z-index: 1;
-  transition:
-    color var(--transition-med),
-    letter-spacing var(--transition-med),
-    transform var(--transition-med);
-}
-
-.project-card:hover .project-visual-label {
-  color: rgba(242, 178, 121, 0.46);
-  letter-spacing: 0.38em;
-}
-
-/* ── Card body ──────────────────────────────────────────── */
-
-.project-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-
-.project-body h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.30rem;
-  font-weight: 600;
-  color: var(--cream);
-  margin-bottom: 9px;
-  transition: color var(--transition-fast);
-  position: relative;
-}
-
-/* Underline sweep on hover */
-.project-body h3::after {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 0;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  margin-top: 5px;
-  transition: width 0.38s var(--ease-out);
-}
-
-.project-card:hover .project-body h3 {
-  color: var(--gold-light);
-}
-
-.project-card:hover .project-body h3::after {
-  width: 70%;
-}
-
-.project-body p {
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  line-height: 1.74;
-  margin-bottom: 18px;
-  flex: 1;
-}
-
-.project-status {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 16px;
-  padding: 7px 11px;
-  border: 1px solid rgba(13, 13, 13, 0.12);
-  border-radius: var(--radius-sm);
-  background: rgba(13, 13, 13, 0.06);
-  color: rgba(13, 13, 13, 0.72);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.project-status::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(242, 178, 121, 0.18);
-}
-
-.project-status--ready::before {
-  background: #2f8f5b;
-  box-shadow: 0 0 0 4px rgba(47, 143, 91, 0.18);
-}
-
-.project-status--development::before {
-  background: #d18a2f;
-  box-shadow: 0 0 0 4px rgba(209, 138, 47, 0.20);
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.projects-cta {
-  text-align: center;
-  padding: 52px 0 0;
-}
-
-.projects-cta p {
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.projects-cta .conversion-actions {
-  justify-content: center;
-}
-
-@media (max-width: 980px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card:hover,
-  .card:hover {
-    transform: none;
-  }
-
-  .project-visual--branded {
-    height: clamp(190px, 54vw, 280px);
-  }
-}
-
-/* ── Featured project card (Kasarão) ────────────────────── */
 
 .project-card--featured {
-  grid-row: span 1;
   overflow: hidden;
-  /* já vem do .card, reforça */
 }
 
-/* Visual área — clicável, com logo real */
 .project-visual--branded {
   display: block;
   width: 100%;
   height: clamp(190px, 18vw, 260px);
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-  background: #30401b;
+  border-bottom: 1px solid var(--line);
   cursor: pointer;
 }
 
@@ -263,51 +66,18 @@
   display: grid;
   place-items: center;
   min-height: clamp(190px, 18vw, 260px);
-  background:
-    radial-gradient(circle at 78% 18%, rgba(115, 184, 191, 0.30), transparent 34%),
-    linear-gradient(135deg, rgba(53, 75, 140, 0.96), rgba(31, 42, 79, 0.90));
+  background: var(--ink);
 }
 
-.project-visual--symbol span {
-  color: #F2E0BD;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(5rem, 10vw, 8rem);
-  font-weight: 700;
-  line-height: 1;
-}
-
-/* Fundo escuro com textura de gradiente quente — gastrobar vibes */
 .project-visual-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.12) 0%, transparent 55%),
-    linear-gradient(160deg, #30401b 0%, #253314 60%, #1d280f 100%);
-  transition: transform 0.8s var(--ease-out);
+  background: linear-gradient(160deg, #1B2432 0%, #0F151F 100%);
+  transition: transform 0.5s var(--ease-out);
 }
 
 .project-visual--branded:hover .project-visual-bg {
-  transform: scale(1.06);
-}
-
-.project-visual--video .project-visual-bg {
-  z-index: 0;
-}
-
-.project-visual--video::before {
-  z-index: 2;
-  background:
-    linear-gradient(180deg, rgba(13, 13, 13, 0.02) 0%, rgba(13, 13, 13, 0.08) 100%),
-    linear-gradient(90deg, rgba(242, 221, 213, 0.04) 0%, transparent 30%, transparent 70%, rgba(13, 13, 13, 0.06) 100%);
-  animation: none;
-  pointer-events: none;
-}
-
-.project-visual--video::after {
-  z-index: 4;
-  background: none;
-  pointer-events: none;
+  transform: scale(1.03);
 }
 
 /* ── Badge de play — cards sem link externo ─────────────── */
@@ -328,19 +98,18 @@
 
 .project-play-badge svg {
   box-sizing: content-box;
-  width: 22px;
-  height: 22px;
-  padding: 17px;
+  width: 20px;
+  height: 20px;
+  padding: 16px;
   border-radius: 50%;
-  background: rgba(13, 13, 13, 0.66);
+  background: rgba(16, 21, 31, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(13, 13, 13, 0.35);
   transition: opacity var(--transition-med), transform var(--transition-med);
 }
 
 .project-visual:hover .project-play-badge svg {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 .project-visual.is-playing .project-play-badge svg {
@@ -357,19 +126,10 @@
   object-fit: cover;
   background: transparent;
   display: block;
-  filter: saturate(1.04) contrast(1.08) brightness(1.02);
-  transform: none;
-  transition:
-    filter var(--transition-med);
-}
-
-.project-visual--video:hover .project-video,
-.project-visual--video:focus-visible .project-video {
-  filter: saturate(1.08) contrast(1.1) brightness(1.04);
 }
 
 .project-visual--video:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2.5px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -383,41 +143,12 @@
   height: 88%;
   max-width: min(56%, 220px);
   object-fit: contain;
-  border-radius: 18px;
-  background: rgba(13, 13, 13, 0.38);
-  box-shadow: 0 18px 38px rgba(13, 13, 13, 0.28);
+  border-radius: var(--radius-md);
   transform: translate(-50%, -50%);
 }
 
-/* Logo centralizada */
-.project-visual-logo-wrap {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: transform 0.7s var(--ease-out), filter 0.5s;
-}
+/* ── Overlay "acessar site" (cards com link real) ───────── */
 
-.project-logo {
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-  border-radius: 50%;
-  filter: drop-shadow(0 8px 28px rgba(242, 178, 121, 0.24)) drop-shadow(0 0 60px rgba(13, 13, 13, 0.18));
-  transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
-}
-
-.project-visual--branded:hover .project-visual-logo-wrap {
-  transform: scale(1.08) translateY(-4px);
-}
-
-.project-visual--branded:hover .project-logo {
-  filter: drop-shadow(0 12px 36px rgba(242, 178, 121, 0.34)) drop-shadow(0 0 80px rgba(13, 13, 13, 0.28));
-}
-
-/* Overlay escuro que aparece no hover com CTA */
 .project-visual-overlay {
   position: absolute;
   inset: 0;
@@ -425,18 +156,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 16px;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.58) 0%,
-      transparent 50%);
+  padding: 14px;
+  background: linear-gradient(to top, rgba(16, 21, 31, 0.7) 0%, transparent 55%);
   opacity: 0;
   transition: opacity var(--transition-med);
 }
 
-.project-visual--branded:hover .project-visual-overlay {
-  opacity: 1;
-}
-
+.project-visual--branded:hover .project-visual-overlay,
 .project-visual--branded:focus-visible .project-visual-overlay {
   opacity: 1;
 }
@@ -449,25 +175,94 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  background: rgba(13, 13, 13, 0.34);
-  border: 1px solid var(--border-hi);
-  border-radius: 999px;
-  padding: 7px 14px;
-  backdrop-filter: blur(8px);
-  transform: translateY(6px);
-  transition: transform var(--transition-med), color var(--transition-fast);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: #fff;
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
 }
 
-.project-visual--branded:hover .project-visual-cta {
-  transform: translateY(0);
+/* ── Corpo do card ──────────────────────────────────────── */
+
+.project-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
-/* Meta row: tipo + páginas */
+.project-body h3 {
+  font-size: 1.14rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.project-body p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.68;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.project-status {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+}
+
+.project-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.project-status--ready::before {
+  background: #2F8F5B;
+}
+
+.project-status--development::before {
+  background: #C97C1F;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projects-cta {
+  text-align: center;
+  padding: 48px 0 0;
+}
+
+.projects-cta p {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.projects-cta .conversion-actions {
+  justify-content: center;
+}
+
+/* ── Meta row ───────────────────────────────────────────── */
+
 .project-meta {
   display: flex;
   align-items: center;
@@ -477,18 +272,15 @@
 }
 
 .project-type {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
 }
 
 .project-pages {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -501,10 +293,10 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: var(--border-hi);
+  background: var(--line-strong);
 }
 
-/* ── Zonea card: vídeo maior e sem corte, para legibilidade ── */
+/* ── Zonea: span 2 colunas, vídeo sem corte ──────────────── */
 
 .project-card--zonea {
   grid-column: span 2;
@@ -514,165 +306,21 @@
   object-fit: contain;
 }
 
-/* ── De La Flor card ────────────────────────────────────── */
+/* ── Cores por marca ────────────────────────────────────── */
 
 .project-visual--delaflor .project-visual-bg {
-  background:
-    radial-gradient(ellipse 75% 65% at 50% 110%, rgba(242, 185, 153, 0.26) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(242, 178, 121, 0.10) 0%, transparent 55%),
-    linear-gradient(150deg, #3e4e24 0%, #33411d 50%, #3e4e24 100%);
+  background: linear-gradient(160deg, #3E1620 0%, #24101A 100%);
 }
-
-.project-logo--delaflor {
-  width: 138px;
-  height: 138px;
-  object-fit: contain;
-  border-radius: 50%;
-  filter:
-    drop-shadow(0 6px 24px rgba(242, 185, 153, 0.40)) drop-shadow(0 0 55px rgba(242, 178, 121, 0.18));
-  transition: transform 0.7s var(--ease-out), filter 0.5s var(--ease-out);
-}
-
-.project-visual--delaflor:hover .project-logo--delaflor {
-  filter:
-    drop-shadow(0 10px 36px rgba(242, 185, 153, 0.56)) drop-shadow(0 0 80px rgba(242, 178, 121, 0.24));
-}
-
-.project-visual--delaflor:hover .project-visual-bg {
-  transform: scale(1.06);
-}
-
-/* ── Sigiloteca card — cores da marca (ink + oxblood) ──── */
 
 .project-visual--sigiloteca .project-visual-bg {
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122, 35, 51, 0.24) 0%, transparent 65%),
-    linear-gradient(160deg, #262b3d 0%, #1e2230 60%, #171a26 100%);
+  background: linear-gradient(160deg, #262B3D 0%, #171A26 100%);
 }
-
-.project-visual--sigiloteca:hover .project-visual-bg {
-  transform: scale(1.06);
-}
-
-/* ── Zonea card — tons de mapa (azul/tinta da marca do site) ── */
 
 .project-visual--zonea .project-visual-bg {
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(115, 184, 191, 0.22) 0%, transparent 65%),
-    linear-gradient(160deg, #1F2A4F 0%, #354B8C 60%, #1F2A4F 100%);
+  background: linear-gradient(160deg, #1F2A4F 0%, #12192E 100%);
 }
 
-.project-visual--zonea:hover .project-visual-bg {
-  transform: scale(1.06);
-}
-
-@media (max-width: 420px) {
-  .project-body {
-    padding: 20px;
-  }
-
-  .project-logo {
-    width: 110px;
-    height: 110px;
-  }
-
-  .project-logo--delaflor {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .project-grid {
-    gap: 18px;
-  }
-
-  .project-card .project-body {
-    padding: 22px 20px 24px;
-  }
-}
-
-/* Palette refinement */
-.project-visual {
-  background: var(--ink);
-}
-
-.project-visual::before {
-  background-image:
-    linear-gradient(rgba(242, 221, 213, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(242, 221, 213, 0.05) 1px, transparent 1px);
-}
-
-.project-visual::after {
-  background: linear-gradient(120deg,
-      transparent 25%,
-      rgba(242, 178, 121, 0.12) 50%,
-      transparent 75%);
-}
-
-.project-visual--branded {
-  background: #0D0D0D;
-}
-
-.project-visual-bg,
-.project-visual--delaflor .project-visual-bg {
-  background:
-    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.12) 0%, transparent 55%),
-    linear-gradient(160deg, #181614 0%, #0D0D0D 100%);
-}
-
-.project-logo,
-.project-logo--delaflor {
-  filter: drop-shadow(0 8px 28px rgba(242, 178, 121, 0.22)) drop-shadow(0 0 60px rgba(242, 185, 153, 0.16));
-}
-
-.project-visual-overlay {
-  background: linear-gradient(to top,
-      rgba(13, 13, 13, 0.72) 0%,
-      transparent 52%);
-}
-
-.project-visual-cta {
-  border-radius: var(--radius-sm);
-  background: rgba(13, 13, 13, 0.62);
-}
-
-/* Light readability pass */
-.project-card {
-  background: rgba(242, 221, 213, 0.72);
-}
-
-.project-visual-bg,
-.project-visual--delaflor .project-visual-bg {
-  background:
-    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(242, 185, 153, 0.28) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(242, 178, 121, 0.20) 0%, transparent 55%),
-    linear-gradient(160deg, #F2DDD5 0%, #F2B999 100%);
-}
-
-.project-visual-cta {
-  color: #F2DDD5;
-}
-
-/* Projetos mais leves e consistentes */
-.project-visual::before {
-  animation: none;
-  opacity: 0.35;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-}
-
-.project-visual--branded:hover .project-visual-bg,
-.project-card:hover .project-video {
-  transform: scale(1.03);
-}
-
-.project-card:hover .project-visual--symbol .project-video {
-  transform: translate(-50%, -50%) scale(1.02);
-}
+/* ── Responsivo ─────────────────────────────────────────── */
 
 @media (min-width: 981px) {
   .project-grid {
@@ -701,19 +349,25 @@
   }
 
   .project-body {
-    padding: 22px 20px;
+    padding: 20px;
   }
 
-  .project-card:hover,
-  .project-visual--branded:hover .project-visual-bg,
-  .project-card:hover .project-video {
+  .project-card:hover {
     transform: none;
   }
 
-  .project-visual--symbol .project-video,
-  .project-card:hover .project-visual--symbol .project-video {
+  .project-visual--symbol .project-video {
     height: 90%;
     max-width: min(62%, 230px);
-    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1600px) {
+  .project-grid {
+    gap: 18px;
+  }
+
+  .project-card .project-body {
+    padding: 22px 20px 24px;
   }
 }
