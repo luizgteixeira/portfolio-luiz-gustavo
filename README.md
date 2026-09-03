@@ -1,8 +1,8 @@
 # Luiz Gustavo Dev
 
-Portfólio profissional de **Luiz Gustavo Barbosa Teixeira**, desenvolvedor web e mobile com foco em sites, landing pages, aplicativos Flutter e sistemas web sob medida.
+Portfólio profissional de **Luiz Gustavo Barbosa Teixeira**, desenvolvedor com mais de 30 anos de experiência em tecnologia (sistemas, bancos de dados, arquitetura orientada a objetos), hoje focado em sites, apps mobile e sistemas web modernos — Flutter, Next.js, Supabase.
 
-O site apresenta, de forma direta, os serviços oferecidos, projetos em destaque e canais de contato.
+O site apresenta, de forma direta, os serviços oferecidos, projetos reais (com link para quem já está no ar), depoimentos de clientes e canais de contato.
 
 Acesse: [luizgustavodev.com](https://luizgustavodev.com/)
 
@@ -14,8 +14,10 @@ Este portfólio foi criado para apresentar rapidamente minha atuação como dese
 
 ### O que você encontra no site
 
-- **Projetos**: exemplos de soluções em desenvolvimento ou já estruturadas, como Vinc e De La Flor.
-- **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho.
+- **Projetos**: exemplos reais de trabalho entregue — de sites institucionais a sistemas com autenticação, banco de dados e pagamento (Vinc, De La Flor, Sigiloteca, Zonea, Kasarão Gastrobar).
+- **Depoimentos**: avaliações reais de clientes, com nome, cargo e link para o projeto.
+- **GitHub / LinkedIn**: linkados no rodapé de todas as páginas.
+- **Contato**: canais diretos para conversa profissional, orçamento ou oportunidade de trabalho, com FAQ sobre preço e prazo.
 
 ### Perfil técnico
 
@@ -27,10 +29,12 @@ Tenho experiência com desenvolvimento front-end, mobile e back-end, atuando pri
 - Flutter
 - Dart
 - Node.js
+- Next.js
 - Express
 - TypeScript
-- PostgreSQL
 - Prisma
+- Supabase
+- PostgreSQL
 - Git e GitHub
 
 Também trabalho com organização de projetos, melhoria de interfaces, revisão de código, responsividade, SEO básico e evolução de sistemas existentes.
@@ -58,9 +62,9 @@ O objetivo é sempre construir soluções simples de entender, fáceis de usar e
 
 ## Projetos em destaque
 
-### Vinc
+### Vinc (app)
 
-Aplicativo jurídico antifraude em desenvolvimento, com foco em verificação segura, auditoria, permissões e backend estruturado.
+Aplicativo jurídico antifraude, com verificação segura, auditoria, permissões e backend estruturado. Produto pronto, disponível para Android.
 
 Tecnologias principais:
 
@@ -70,9 +74,53 @@ Tecnologias principais:
 - Prisma
 - PostgreSQL
 
+### Vinc — Site e Blog
+
+Site institucional e blog educativo sobre prevenção a fraudes jurídicas, com SEO técnico, dados estruturados e conformidade com a LGPD. No ar: [vincapp.com.br](https://www.vincapp.com.br/)
+
+Tecnologias principais:
+
+- HTML
+- CSS
+- JavaScript
+
 ### De La Flor
 
-Loja virtual e presença digital para marca de produtos artesanais, com foco em apresentação de produtos, confiança e jornada de compra.
+Loja virtual para marca de alfajores peruanos, com foco em apresentação de produtos, confiança e jornada de compra. No ar: [alfajordelaflor.com.br](https://www.alfajordelaflor.com.br/)
+
+Tecnologias principais:
+
+- HTML
+- CSS
+- JavaScript
+
+### Sigiloteca
+
+Sistema de gestão documental para escritórios de advocacia — petições, contratos, decisões e documentos de cliente organizados em um só lugar, com controle de acesso e exportação segura. No ar: [sigiloteca.com.br](https://sigiloteca.com.br/)
+
+Tecnologias principais:
+
+- Next.js
+- Supabase
+- PostgreSQL
+- TypeScript
+
+### Zonea
+
+Plataforma de busca que conecta arquitetos, engenheiros e urbanistas direto às fontes oficiais de zoneamento e uso do solo dos municípios da Região Metropolitana de BH, com mapa interativo e assinatura via Mercado Pago. No ar: [zonea.com.br](https://zonea.com.br/)
+
+Tecnologias principais:
+
+- HTML
+- CSS
+- JavaScript
+- Supabase
+- Leaflet
+- Mercado Pago
+
+### Kasarão Gastrobar
+
+Site institucional para restaurante, com hero em vídeo, depoimentos reais de clientes e SEO local. Pronto, em aprovação do cliente antes de publicar.
 
 Tecnologias principais:
 
@@ -109,9 +157,9 @@ portfolio-luiz-gustavo/
 
 ## Páginas principais
 
-- `index.html`: apresentação principal, resumo de serviços, processo de trabalho e chamada para contato.
-- `projetos.html`: projetos em destaque.
-- `contato.html`: formulário, WhatsApp e informações de contato.
+- `index.html`: apresentação principal, resumo de serviços, projetos em destaque, depoimentos e chamada para contato.
+- `projetos.html`: todos os projetos, com tecnologias e status de cada um.
+- `contato.html`: formulário, WhatsApp, informações de contato e FAQ.
 
 ---
 
@@ -120,18 +168,20 @@ portfolio-luiz-gustavo/
 O site foi estruturado com atenção a:
 
 - HTML semântico;
-- responsividade para desktop, tablet e mobile;
+- responsividade para desktop, tablet e mobile (testada de 320px a 1024px+);
 - navegação mobile com menu acessível;
 - foco visível para navegação por teclado;
 - `skip-link` para ir direto ao conteúdo;
-- suporte a `prefers-reduced-motion`;
+- suporte a `prefers-reduced-motion`, `prefers-contrast` e `forced-colors`;
 - metatags de SEO;
 - Open Graph;
 - Twitter Card;
-- JSON-LD;
+- JSON-LD (ProfessionalService, Person, WebSite, Review, FAQPage, BreadcrumbList);
 - `robots.txt`;
 - `sitemap.xml`;
-- versionamento de assets com query string.
+- versionamento de assets com query string;
+- vídeos de projeto sem autoplay forçado (tocam ao clicar ou passar o mouse, conforme o caso);
+- identidade visual própria (Archivo, Source Sans 3 e JetBrains Mono), sem template genérico.
 
 ---
 
