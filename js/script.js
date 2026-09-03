@@ -228,47 +228,64 @@ function initProjectVideos() {
   const videos = Array.from(document.querySelectorAll('.project-video'));
   if (!videos.length) return;
 
-  // Respeita a preferência do usuário: mantém apenas o poster estático, sem autoplay.
+  videos.forEach((video) => {
+    video.muted = true;
+    video.playsInline = true;
+  });
+
+  // Respeita a preferência do usuário: mantém apenas o poster estático.
   if (prefersReducedMotion) return;
 
   const playVideo = (video) => {
-    video.muted = true;
-    video.playsInline = true;
-
     const playPromise = video.play();
     if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {
-        video.setAttribute('data-video-paused', 'true');
-      });
+      playPromise.catch(() => {});
     }
   };
 
-  if (!('IntersectionObserver' in window)) {
-    videos.forEach(playVideo);
-    return;
-  }
+  const stopVideo = (video) => {
+    video.pause();
+    video.currentTime = 0;
+  };
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (!(video instanceof HTMLVideoElement)) return;
+  videos.forEach((video) => {
+    const visual = video.closest('.project-visual');
+    if (!visual) return;
 
-        if (entry.isIntersecting) {
-          playVideo(video);
-          return;
-        }
+    const card = video.closest('.project-card');
+    const linksOut = card && card.querySelector('.project-card-link');
 
-        video.pause();
-      });
-    },
-    {
-      rootMargin: '120px 0px',
-      threshold: 0.2,
+    if (linksOut) {
+      // O card inteiro já leva pro site real (o link cobre a área toda, inclusive
+      // por cima do vídeo) — por isso o hover é escutado no card, não no vídeo.
+      card.addEventListener('mouseenter', () => playVideo(video));
+      card.addEventListener('mouseleave', () => stopVideo(video));
+      return;
     }
-  );
 
-  videos.forEach((video) => observer.observe(video));
+    // Sem link externo: o clique liga e desliga o vídeo aqui mesmo.
+    visual.setAttribute('role', 'button');
+    visual.setAttribute('tabindex', '0');
+    visual.setAttribute('aria-label', 'Reproduzir prévia em vídeo');
+
+    const toggle = () => {
+      if (video.paused) {
+        playVideo(video);
+        visual.classList.add('is-playing');
+      } else {
+        stopVideo(video);
+        visual.classList.remove('is-playing');
+      }
+    };
+
+    visual.addEventListener('click', toggle);
+    visual.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggle();
+      }
+    });
+  });
 }
 
 initRevealObserver();

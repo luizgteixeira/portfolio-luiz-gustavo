@@ -310,6 +310,44 @@
   pointer-events: none;
 }
 
+/* ── Badge de play — cards sem link externo ─────────────── */
+
+.project-visual--video:not(.project-visual--branded) {
+  cursor: pointer;
+}
+
+.project-play-badge {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.project-play-badge svg {
+  box-sizing: content-box;
+  width: 22px;
+  height: 22px;
+  padding: 17px;
+  border-radius: 50%;
+  background: rgba(13, 13, 13, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(13, 13, 13, 0.35);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.project-visual:hover .project-play-badge svg {
+  transform: scale(1.08);
+}
+
+.project-visual.is-playing .project-play-badge svg {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
 .project-video {
   position: absolute;
   inset: 0;
