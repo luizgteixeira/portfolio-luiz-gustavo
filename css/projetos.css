@@ -278,6 +278,21 @@
   color: var(--accent-ink);
 }
 
+.project-highlight {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
 .project-pages {
   font-family: var(--font-ui);
   font-size: 0.62rem;
