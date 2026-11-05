@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Gustavo;Luiz;;;
+FN:Luiz Gustavo
+TITLE:Desenvolvedor Web e Mobile
+TEL;TYPE=CELL,VOICE:+55 31 99260-9970
+EMAIL;TYPE=WORK:contato@luizgustavodev.com
+URL:https://luizgustavodev.com
+URL;TYPE=Instagram:https://www.instagram.com/luiz_b_teixeira/
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/luiz-gustavo1701/
+NOTE:Sites e apps mobile para vender e operar melhor.
+END:VCARD
